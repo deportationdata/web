@@ -1,0 +1,22 @@
+---
+title: "News"
+listing:
+  id: news-listings
+  contents: news
+  sort: "date desc"
+  type: table
+  categories: false
+  filter-ui: false
+  sort-ui: false
+---
+
+
+::: {#news-listings}
+:::
+
+::: {.callout-tip}
+## Subscribe
+
+Subscribe to receive these data updates by email through [Google Groups](https://groups.google.com/a/law.berkeley.edu/g/deportation_data_updates/about) or [by email](mailto:deportation_data_updates+subscribe@lists.berkeley.edu).
+
+:::

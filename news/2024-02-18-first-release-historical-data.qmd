@@ -1,0 +1,70 @@
+---
+title: "First release: historical data"
+# description: "Post description"
+author: "David Hausman"
+date: "2/12/2025"
+# date-modified: "5/23/2021"
+---
+
+Our first release includes data in its original format from Immigrations and Customs Enforcement (ICE), Customs and Border Patrol (CBP), and the Executive Office for Immigration Review (EOIR). 
+
+### Data from ICE with Unique Identifiers
+
+ICE collects data on every person it encounters, arrests, detains, and deports. This section includes the datasets for which ICE has provided unique identifiers that correspond to individuals, allowing them to be followed anonymously through the stages of the enforcement process.
+
+Arrests
+: This dataset shows only the date and method of every arrest (apprehension).
+
+Risk classification assessments
+: This dataset shows information on each risk classification assessment (RCA)–the procedure used by ICE to determine danger and flight risk.
+
+Detentions
+: This dataset includes a row for every detention book-in/book-out. 
+
+Removals (deportations)
+: This dataset includes a row for every removal (deportation) that ICE conducted.
+
+### Data from ICE without Unique Identifiers
+
+This section includes other, unlinked ICE datasets. Many of these overlap with the linked data described above.
+
+Arrests
+: These datasets include details on arrests (apprehensions). 
+
+Detainers
+: Detainers are requests that ICE makes to prisons and jails to hold individuals for transfer to immigration custody and/or to notify ICE of their release dates. 
+
+Detention facilities
+: This file includes some (out-of-date) information on ICE detention facilities.
+
+Encounters
+: This dataset records each encounter that an ICE officer had with someone, whether or not that encounter resulted in an arrest.
+
+Flights
+: Data on ICE-operated charter flights and passenger manifests from the Immigration and Customs Enforcement's Alien Repatriation and Transfer System (ARTS).
+
+Removals
+: This dataset includes a row for every removal (deportation) that ICE conducted.
+
+### Customs and Border Protection
+
+CBP collects individual-level data on every person it arrests or expels at the border as well as on every person who arrives at a port of entry whom it deems inadmissible (most frequently asylum seekers). Border arrest data are collected by the Border Patrol; inadmissible arrivals data are collected by the Office of Field Operations.
+
+Apprehensions at the border
+: This dataset includes every apprehension at the border.
+
+People deemed inadmissable at ports of entry
+: This dataset includes records of each person CBP found inadmissible at a port of entry. These are mostly asylum seekers.
+
+Title 42 expulsions
+: This dataset includes Title 42 expulsions: the border arrests that CBP does not categorize as apprehensions.
+
+Encounters 
+: This dataset includes all border arrests, both apprehensions and Title 42 expulsions.
+
+Family unit apprehensions
+: This dataset includes apprehensions only of family units. 
+
+### Executive Office for Immigration Review (Immigration Courts)
+
+The Executive Office for Immigration Review at the Department of Justice collects information on every immigration court case, including information on scheduling, case type, immigration charges, applications for relief, and appeals. 

@@ -1,0 +1,37 @@
+---
+title: "Related efforts"
+---
+
+This page includes links to related projects that use immigration enforcement data collected by us and others to provide analysis, visualizations, and reports for attorneys, advocates, government, and the public.
+
+## Immigration policy
+
+* [Immigration Policy Tracker](https://immpolicytracking.org)
+: Compiles and indexes all identifiable Trump 1.0 and 2.0 immigration policies with key source documents and continually updates each entry to show its current status.
+
+## Data analysis and visualization
+
+* [Transaction Records Clearinghouse: Immigration](https://tracreports.org/immigration)
+: Immigration courts, detention, and deportation data.
+
+* [Vera Institute](https://www.vera.org)
+: Immigration courts, detention, and deportation data.
+
+  - [Immigration Court Legal Representation Dashboard](https://www.vera.org/ending-mass-incarceration/reducing-incarceration/detention-of-immigrants/advancing-universal-representation-initiative/immigration-data-tools-and-maps)
+  - [Deportation Data Information Hub](https://www.vera.org/ending-mass-incarceration/reducing-incarceration/detention-of-immigrants/advancing-universal-representation-initiative/state-and-local-deportation-defense-information-hub)
+  - [ICE Detention Trends Dashboard](https://www.vera.org/ice-detention-trends)
+
+## Tools for advocates and governments
+
+<!-- * [Immigration Commons](https://immigrationcommons.org) -->
+<!-- : Data analysis and visualization platform on immigration court proceedings for civil society and local government.  -->
+
+* [Mobile Pathways](https://www.mobilepathways.org)
+: Uses mobile phone technology, data, and AI to help immigrants in court navigate the legal immigration process.
+
+## Data acquisition
+
+* [American Immigration Council Transparency Initiative](https://www.americanimmigrationcouncil.org/what-we-do/government-transparency)
+: Uses the Freedom of Information Act to secure data and documentation from government agencies and take them to court when they fail to comply. 
+
+

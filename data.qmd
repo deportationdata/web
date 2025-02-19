@@ -1,0 +1,406 @@
+---
+title: "Data"
+---
+
+```{r}
+library(tidyverse)
+library(reactable)
+
+format_date <- function(date) {
+  format(date, "%b. %Y")
+}
+
+data_url <- "http://data.deportationdata.org"
+
+library(googlesheets4)
+df_list <- read_sheet("https://docs.google.com/spreadsheets/d/19ExRhP2OSdLLBQiI_9-V321IA536inpCf4j5b3La6kA/edit?gid=0#gid=0") 
+
+sources <- read_sheet("https://docs.google.com/spreadsheets/d/19ExRhP2OSdLLBQiI_9-V321IA536inpCf4j5b3La6kA/edit?gid=500897663#gid=500897663", sheet = "sources") 
+
+df_list <-
+  df_list |> 
+  left_join(sources, by = "Location") |> 
+  mutate(
+    # url_raw = glue::glue("{data_url}/{Location}/{tools::file_path_sans_ext(Filename)}_raw.{tools::file_ext(Filename)}"),
+    # url = glue::glue("{data_url}/{Location}/{tools::file_path_sans_ext(Filename)}"),
+    url = glue::glue("{data_url}/{Location}/{Filename}"),
+    # Download = glue::glue("<a href='{url_raw}'>Original</a> <a href='{url}.xlsx'>Excel</a> <a href='{url}.csv'>CSV</a> <a href='{url}.dta'>Stata</a> <a href='{url}.rds'>R</a> <a href='{url}.dta'>SPSS</a>"),
+    Source = glue::glue("<a href='{source_URL}'>{source_label}</a>"),
+    Download = glue::glue("<a href='{url}'>Raw</a> ({tools::file_ext(Filename)}, {Filesize})"),
+  ) 
+
+col_defs <- list(
+  Start = colDef(minWidth = 75), 
+  End = colDef(minWidth = 75), 
+  Source = colDef(minWidth = 75, html = TRUE),
+  Download = colDef(minWidth = 100, html = TRUE)
+)
+
+col_defs_description <- list(
+  Description = colDef(minWidth = 125),
+  Start = colDef(minWidth = 75), 
+  End = colDef(minWidth = 75), 
+  Source = colDef(minWidth = 75, html = TRUE),
+  Download = colDef(minWidth = 100, html = TRUE)
+)
+```
+
+This page collects and reposts individual-level Immigration and Customs Enforcement (ICE), Customs and Border Patrol (CBP), and Justice Department Executive Office of Immigration Review (EOIR) datasets. In most cases, these datasets are also available for download elsewhere. The original source is always a government agency (ICE, CBP or EOIR), but where other third parties have posted the data before we have, we link to their sites as the source.
+
+## Immigration and Customs Enforcement (with Unique Identifiers)
+
+ICE collects data on every person it encounters, arrests, detains, and deports. This section includes the datasets for which ICE has provided unique identifiers that correspond to individuals, allowing them to be followed anonymously through the stages of the enforcement process.
+
+### Arrests
+
+This dataset shows only the date and method of every arrest (apprehension). Although the dataset is sparse, it may provide useful information when linked with detention and deportation data.
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "arrests") |> 
+  arrange(Start) |>
+  transmute(Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+### Risk classification assessments
+
+This dataset shows information on each risk classification assessment (RCA)–the procedure used by ICE to determine danger and flight risk. Note that the RCA tool is used both to help ICE officers decide whether to detain or release a person and to determine risk levels for detention (see the `rca_decision_type` field). 
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "rca") |> 
+  arrange(Start) |>
+  transmute(Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+### Detentions
+
+This dataset includes a row for every detention book-in/book-out. Notice that a single stay in detention—defined by a stay book-in and stay book-out date—may include multiple rows because ICE frequently transfers people between detention centers. 
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "detentions") |> 
+  arrange(Start) |>
+  transmute(Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+
+### Removals (deportations)
+
+This dataset includes a row for every removal (deportation) that ICE conducted. Note that individuals can be returned or expelled by CBP at the border without appearing in this dataset. 
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "removals") |> 
+  arrange(Start) |>
+  transmute(Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+## Immigration and Customs Enforcement (without Unique Identifiers)
+
+This section includes other, unlinked ICE datasets. Many of these overlap with the linked data available for download above.
+
+### Arrests
+
+These datasets include details on arrests (apprehensions). There are many more fields in these data than the above dataset on arrests, but these data do not include the linked identifier so can only be used on their own. 
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "arrests_historical") |> 
+  arrange(Start) |>
+  transmute(Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+### Detainers
+
+Detainers are requests that ICE makes to prisons and jails to hold individuals for transfer to immigration custody and/or to notify ICE of their release dates. This dataset tracks each detainer request and its outcome. For some years there are two versions of the data, one that has many fields and on that has few fields but includes the city and state of the detention facility which is missing from the expanded data. <!--Some of these data were obtained by [NPR](https://github.com/nprapps/sanctuary-cities) through a FOIA request ([read the story](https://www.npr.org/sections/thetwo-way/2016/12/22/504031635/you-say-you-re-an-american-but-what-if-you-had-to-prove-it-or-be-deported)). -->
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "detainers_historical") |> 
+  arrange(Start) |>
+  transmute(Description, Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs_description, pagination = FALSE)
+```
+
+</details>
+
+### Detention facilities
+
+This file includes some (out-of-date) information on ICE detention facilities. 
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "facilities_historical") |> 
+  arrange(Start) |>
+  transmute(Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+
+</details>
+
+### Encounters
+
+This dataset records each encounter that an ICE officer had with someone, whether or not that encounter resulted in an arrest.
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "encounters_historical") |> 
+  arrange(Start) |>
+  transmute(Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+### Flights
+
+Data on ICE-operated charter flights and passenger manifests from the Immigration and Customs Enforcement's Alien Repatriation and Transfer System (ARTS).
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "arts_historical") |> 
+  arrange(Start) |>
+  transmute(Description, Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs_description, pagination = FALSE)
+```
+
+</details>
+
+### Removals
+
+This dataset includes a row for every removal (deportation) that ICE conducted. Note that individuals can be returned or expelled by CBP at the border without appearing in this dataset. These data have more limited fields than the linked data above.
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  filter(Type == "removals_historical") |> 
+  arrange(Start) |>
+  transmute(Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+<!-- #### Removals (deportations) -->
+
+<!-- This table is broadly similar to the removals table above, but it lacks unique identifiers for individuals. On the other hand, it covers a much longer time period, starting in 2003. -->
+
+<!-- <details> -->
+<!-- <summary>Show datasets</summary> -->
+
+<!-- </details> -->
+
+<!-- ### Other -->
+
+<!-- - ICE arrest, risk classification assessment, detention, and deportation data linked by anonymized unique IDs. -->
+<!-- <!-- - Download slices (in a linkable way or not?) --> 
+<!-- - Historical ICE detainers data  -->
+<!-- - Historical ICE deportations data -->
+<!-- - Historical ICE detention data  -->
+<!-- - Historical ICE encounters data? -->
+<!-- - ICE metadata and documentation -->
+<!-- - Detention centers data -->
+<!-- - Link to public detention descriptive statistics data -->
+<!-- - Link to our own guide to use of ICE data -->
+<!-- - AIC data dictionary? -->
+<!-- - Post redacted deposition? -->
+
+## Customs and Border Protection
+
+CBP collects individual-level data on every person it arrests or expels at the border as well as on every person who arrives at a port of entry whom it deems inadmissible (most frequently asylum seekers). Border arrest data are collected by the Border Patrol; inadmissible arrivals data are collected by the Office of Field Operations. CBP maintains a detailed [FOIA library](https://www.cbp.gov/newsroom/accountability-and-transparency/foia-reading-room) with these datasets and others.
+
+### Apprehensions at the border
+
+This dataset includes every apprehension at the border. Before 2020, all border arrests were apprehensions, and these files therefore include all arrests for those years. With the onset of the Title 42 pandemic expulsions program, some border arrests led to expulsions, which CBP does not categorize as apprehensions.
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "apprehensions") |> 
+  arrange(Start) |>
+  transmute(Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+### People deemed inadmissable at ports of entry
+
+This dataset includes records of each person CBP found inadmissible at a port of entry. These are mostly asylum seekers.
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "ofo") |> 
+  arrange(Start) |>
+  transmute(Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+
+### Title 42 expulsions
+
+This dataset includes Title 42 expulsions: the border arrests that CBP does not categorize as apprehensions.
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "t42") |> 
+  arrange(Start) |>
+  transmute(Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+### Encounters 
+
+This dataset includes all border arrests, both apprehensions and Title 42 expulsions. Notice, however, that it exists currently only for a relatively short period.
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "encounters") |> 
+  arrange(Start) |>
+  transmute(Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+### Family unit apprehensions
+
+This dataset includes apprehensions only of family units. The same apprehensions are included in some of the tables above. We post it here because it includes some fields that those datasets lack.
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "fmua") |> 
+  arrange(Start) |>
+  transmute(Start, End, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+## Executive Office for Immigration Review (Immigration Courts)
+
+The Executive Office for Immigration Review at the Department of Justice collects information on every immigration court case, including information on scheduling, case type, immigration charges, applications for relief, and appeals. The datasets includes records from the 1970s to the last year, though most are much more recent. The agency posts an updated dataset monthly in their [FOIA Library](https://www.justice.gov/eoir/foia-library-0). 
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+col_defs_description <- list(
+  Description = colDef(minWidth = 125),
+  `Release date` = colDef(minWidth = 75),
+  Source = colDef(minWidth = 75, html = TRUE),
+  Download = colDef(minWidth = 100, html = TRUE)
+)
+
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "courts" & !str_detect(tolower(Filename), "tbllookup")) |> 
+  arrange(Start) |>
+  transmute(Description, `Release date` = End, Source, Download) |> 
+  reactable::reactable(columns = col_defs_description, pagination = FALSE)
+```
+
+</details>
+
+<details>
+<summary>Show lookup tables (codebooks)</summary>
+
+```{r}
+col_defs_description <- list(
+  Description = colDef(minWidth = 125),
+  `Release date` = colDef(minWidth = 75),
+  Source = colDef(minWidth = 75, html = TRUE),
+  Download = colDef(minWidth = 100, html = TRUE)
+)
+
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "courts" &  str_detect(tolower(Filename), "tbllookup")) |> 
+  arrange(Start) |>
+  transmute(Description, `Release date` = End, Source, Download) |> 
+  reactable::reactable(columns = col_defs_description, pagination = FALSE)
+```
+
+</details>
+
+<!-- USCIS? -->
+
+
