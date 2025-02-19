@@ -14,7 +14,7 @@ We also provide [links to related projects](related.html)  that offer analyses, 
 
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-6}
 
-### {{< bi bi-share-fill >}} Share your data 
+### Share your data 
 
 Let your data work for others! If you have public, shareable immigration enforcement data from a FOIA request or discovery in litigation, we would love to post your data (crediting you) or link to your data repository. We can help connect you with others who can create visual tools using your data and/or can help analyze it. 
 

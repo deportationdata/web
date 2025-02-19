@@ -13,7 +13,6 @@ format_date <- function(date) {
 
 data_url <- "http://data.deportationdata.org"
 
-library(googlesheets4)
 df_list <- read_excel("labels.xlsx", sheet = "data")
 sources <- read_excel("labels.xlsx", sheet = "sources") 
 
