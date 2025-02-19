@@ -5,6 +5,7 @@ title: "Data"
 ```{r}
 library(tidyverse)
 library(reactable)
+library(readxl)
 
 format_date <- function(date) {
   format(date, "%b. %Y")
@@ -13,9 +14,8 @@ format_date <- function(date) {
 data_url <- "http://data.deportationdata.org"
 
 library(googlesheets4)
-df_list <- read_sheet("https://docs.google.com/spreadsheets/d/19ExRhP2OSdLLBQiI_9-V321IA536inpCf4j5b3La6kA/edit?gid=0#gid=0") 
-
-sources <- read_sheet("https://docs.google.com/spreadsheets/d/19ExRhP2OSdLLBQiI_9-V321IA536inpCf4j5b3La6kA/edit?gid=500897663#gid=500897663", sheet = "sources") 
+df_list <- read_excel("labels.xlsx", sheet = "data")
+sources <- read_excel("labels.xlsx", sheet = "sources") 
 
 df_list <-
   df_list |> 
