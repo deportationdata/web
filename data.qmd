@@ -11,7 +11,7 @@ format_date <- function(date) {
   format(date, "%b. %Y")
 }
 
-data_url <- "http://data.deportationdata.org"
+data_url <- "http://deportationdata.s3-website.us-east-2.amazonaws.com"
 
 df_list <- read_excel("labels.xlsx", sheet = "data")
 sources <- read_excel("labels.xlsx", sheet = "sources") 
