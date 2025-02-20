@@ -14,15 +14,15 @@ This page includes links to related projects that use immigration enforcement da
 * [Transaction Records Clearinghouse: Immigration](https://tracreports.org/immigration)
 : Immigration courts, detention, and deportation data.
 
+* [University of Washington Center for Human Rights](https://jsis.washington.edu/humanrights/)
+: Detention and deportation data including on ICE deporation flights ("ICE Air").
+
 * [Vera Institute](https://www.vera.org)
 : Immigration courts, detention, and deportation data.
 
   - [Immigration Court Legal Representation Dashboard](https://www.vera.org/ending-mass-incarceration/reducing-incarceration/detention-of-immigrants/advancing-universal-representation-initiative/immigration-data-tools-and-maps)
   - [Deportation Data Information Hub](https://www.vera.org/ending-mass-incarceration/reducing-incarceration/detention-of-immigrants/advancing-universal-representation-initiative/state-and-local-deportation-defense-information-hub)
   - [ICE Detention Trends Dashboard](https://www.vera.org/ice-detention-trends)
-  
-* [University of Washington Center for Human Rights](https://jsis.washington.edu/humanrights/)
-: Detention and deportation data including on ICE deporation flights ("ICE Air").
 
 ## Tools for advocates and governments
 
