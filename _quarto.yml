@@ -1,8 +1,15 @@
 project:
   type: website
+  resources: 
+    - img
 
 website:
   title: "Deportation Data Project"
+  google-analytics: 
+    tracking-id: "G-FL9SCY5B31"
+    anonymize-ip: true
+    storage: none
+
   navbar:
     left:
       # - href: guide.qmd
@@ -12,7 +19,7 @@ website:
       - href: team.qmd
       - href: related.qmd
   page-footer:
-    left: "Data and content licensed under [CC-0](https://creativecommons.org/publicdomain/zero/1.0/) (no rights reserved) unless otherwise noted."
+    center: "Data and content licensed under [CC-0](https://creativecommons.org/publicdomain/zero/1.0/) (no rights reserved) unless otherwise noted."
     # right:
     #   - icon: github
     #     href: https://github.com/

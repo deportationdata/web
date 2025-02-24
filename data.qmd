@@ -6,6 +6,7 @@ title: "Data"
 library(tidyverse)
 library(reactable)
 library(readxl)
+library(scales)
 
 format_date <- function(date) {
   format(date, "%b. %Y")
@@ -16,22 +17,34 @@ data_url <- "https://d3jwxh43tyoznc.cloudfront.net"
 df_list <- read_excel("labels.xlsx", sheet = "data")
 sources <- read_excel("labels.xlsx", sheet = "sources") 
 
+format_numbers <- function(x) {
+  ifelse(abs(x) >= 1e6,
+         label_number(scale = 1e-6, suffix = "M", accuracy = 1)(x),
+         ifelse(abs(x) >= 1e3,
+                label_number(scale = 1e-3, suffix = "K", accuracy = 1)(x),
+                label_number(accuracy = 1)(x)))
+}
+
 df_list <-
   df_list |> 
   left_join(sources, by = "Location") |> 
   mutate(
-    # url_raw = glue::glue("{data_url}/{Location}/{tools::file_path_sans_ext(Filename)}_raw.{tools::file_ext(Filename)}"),
-    # url = glue::glue("{data_url}/{Location}/{tools::file_path_sans_ext(Filename)}"),
-    url = glue::glue("{data_url}/{Location}/{Filename}"),
-    # Download = glue::glue("<a href='{url_raw}'>Original</a> <a href='{url}.xlsx'>Excel</a> <a href='{url}.csv'>CSV</a> <a href='{url}.dta'>Stata</a> <a href='{url}.rds'>R</a> <a href='{url}.dta'>SPSS</a>"),
+    url = glue::glue("{data_url}/{Location}/{tools::file_path_sans_ext(Filename)}"),
+    Start = as.Date(Start),
+    End = as.Date(End),
+    Records = `N records`,
+    Records = format_numbers(Records),
     Source = glue::glue("<a href='{source_URL}'>{source_label}</a>"),
-    Download = glue::glue("<a href='{url}'>Raw</a> ({tools::file_ext(Filename)}, {Filesize})"),
+    Download = glue::glue("<a href='{url}.xlsx'><img src='img/excel.svg' width = 25 height = 25 alt = 'Excel'></a> <a href='{url}.csv'><img src='img/csv.svg' width = 25 height = 25 alt = 'CSV'></a> <a href='{url}.dta'><img src='img/stata.svg' width = 25 height = 25 alt = 'Stata'></a> <a href='{url}.rds'><img src='img/R.svg' width = 25 height = 25 alt = 'R'></a> <a href='{url}.sav'><img src='img/spss.svg' width = 25 height = 25 alt = 'SPSS'></a>")
+
+    # Download = glue::glue("<a href='{url}'>Raw</a> ({tools::file_ext(Filename)}, {Filesize})"),
   ) 
 
 col_defs <- list(
   Start = colDef(minWidth = 75), 
   End = colDef(minWidth = 75), 
-  Source = colDef(minWidth = 75, html = TRUE),
+  Records = colDef(minWidth = 55, align = "right"),
+  Source = colDef(minWidth = 65, html = TRUE),
   Download = colDef(minWidth = 100, html = TRUE)
 )
 
@@ -39,7 +52,8 @@ col_defs_description <- list(
   Description = colDef(minWidth = 125),
   Start = colDef(minWidth = 75), 
   End = colDef(minWidth = 75), 
-  Source = colDef(minWidth = 75, html = TRUE),
+  Records = colDef(minWidth = 55, align = "right"),
+  Source = colDef(minWidth = 65, html = TRUE),
   Download = colDef(minWidth = 100, html = TRUE)
 )
 ```
@@ -62,7 +76,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "arrests") |> 
   arrange(Start) |>
-  transmute(Start, End, Source, Download) |> 
+  transmute(Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs, pagination = FALSE)
 ```
 
@@ -80,7 +94,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "rca") |> 
   arrange(Start) |>
-  transmute(Start, End, Source, Download) |> 
+  transmute(Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs, pagination = FALSE)
 ```
 
@@ -98,7 +112,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "detentions") |> 
   arrange(Start) |>
-  transmute(Start, End, Source, Download) |> 
+  transmute(Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs, pagination = FALSE)
 ```
 
@@ -117,7 +131,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "removals") |> 
   arrange(Start) |>
-  transmute(Start, End, Source, Download) |> 
+  transmute(Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs, pagination = FALSE)
 ```
 
@@ -139,7 +153,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "arrests_noid") |> 
   arrange(Start) |>
-  transmute(Start, End, Source, Download) |> 
+  transmute(Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs, pagination = FALSE)
 ```
 
@@ -157,7 +171,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "detainers_noid") |> 
   arrange(Start) |>
-  transmute(Description, Start, End, Source, Download) |> 
+  transmute(Description, Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs_description, pagination = FALSE)
 ```
 
@@ -175,7 +189,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "facilities_noid") |> 
   arrange(Start) |>
-  transmute(Start, End, Source, Download) |> 
+  transmute(Start, End, Records, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs, pagination = FALSE)
 ```
 
@@ -194,7 +208,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "encounters_noid") |> 
   arrange(Start) |>
-  transmute(Start, End, Source, Download) |> 
+  transmute(Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs, pagination = FALSE)
 ```
 
@@ -212,7 +226,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "arts_noid") |> 
   arrange(Start) |>
-  transmute(Description, Start, End, Source, Download) |> 
+  transmute(Description, Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs_description, pagination = FALSE)
 ```
 
@@ -229,7 +243,7 @@ This dataset includes a row for every removal (deportation) that ICE conducted. 
 df_list |> 
   filter(Type == "removals_noid") |> 
   arrange(Start) |>
-  transmute(Start, End, Source, Download) |> 
+  transmute(Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs, pagination = FALSE)
 ```
 
@@ -275,7 +289,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "apprehensions") |> 
   arrange(Start) |>
-  transmute(Start, End, Source, Download) |> 
+  transmute(Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs, pagination = FALSE)
 ```
 
@@ -293,7 +307,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "ofo") |> 
   arrange(Start) |>
-  transmute(Start, End, Source, Download) |> 
+  transmute(Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs, pagination = FALSE)
 ```
 
@@ -312,7 +326,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "t42") |> 
   arrange(Start) |>
-  transmute(Start, End, Source, Download) |> 
+  transmute(Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs, pagination = FALSE)
 ```
 
@@ -330,7 +344,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "encounters") |> 
   arrange(Start) |>
-  transmute(Start, End, Source, Download) |> 
+  transmute(Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs, pagination = FALSE)
 ```
 
@@ -348,7 +362,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "fmua") |> 
   arrange(Start) |>
-  transmute(Start, End, Source, Download) |> 
+  transmute(Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs, pagination = FALSE)
 ```
 
@@ -365,6 +379,7 @@ The Executive Office for Immigration Review at the Department of Justice collect
 col_defs_description <- list(
   Description = colDef(minWidth = 125),
   `Release date` = colDef(minWidth = 75),
+  Records = colDef(minWidth = 55, align = "right"),
   Source = colDef(minWidth = 75, html = TRUE),
   Download = colDef(minWidth = 100, html = TRUE)
 )
@@ -373,7 +388,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "courts" & !str_detect(tolower(Filename), "tbllookup")) |> 
   arrange(Start) |>
-  transmute(Description, `Release date` = End, Source, Download) |> 
+  transmute(Description, `Release date` = End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs_description, pagination = FALSE)
 ```
 
@@ -386,6 +401,7 @@ df_list |>
 col_defs_description <- list(
   Description = colDef(minWidth = 125),
   `Release date` = colDef(minWidth = 75),
+  Records = colDef(minWidth = 55, align = "right"),
   Source = colDef(minWidth = 75, html = TRUE),
   Download = colDef(minWidth = 100, html = TRUE)
 )
@@ -394,7 +410,7 @@ df_list |>
   # filter to just get the detainers by type
   filter(Type == "courts" &  str_detect(tolower(Filename), "tbllookup")) |> 
   arrange(Start) |>
-  transmute(Description, `Release date` = End, Source, Download) |> 
+  transmute(Description, `Release date` = End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs_description, pagination = FALSE)
 ```
 
