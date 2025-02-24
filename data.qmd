@@ -14,7 +14,7 @@ format_date <- function(date) {
 
 data_url <- "https://d3jwxh43tyoznc.cloudfront.net"
 
-df_list <- read_excel("labels.xlsx", sheet = "data")
+df_list <- read_excel("labels.xlsx", sheet = "data") 
 sources <- read_excel("labels.xlsx", sheet = "sources") 
 
 format_numbers <- function(x) {
@@ -35,7 +35,13 @@ df_list <-
     Records = `N records`,
     Records = format_numbers(Records),
     Source = glue::glue("<a href='{source_URL}'>{source_label}</a>"),
-    Download = glue::glue("<a href='{url}.xlsx'><img src='img/excel.svg' width = 25 height = 25 alt = 'Excel'></a> <a href='{url}.csv'><img src='img/csv.svg' width = 25 height = 25 alt = 'CSV'></a> <a href='{url}.dta'><img src='img/stata.svg' width = 25 height = 25 alt = 'Stata'></a> <a href='{url}.rds'><img src='img/R.svg' width = 25 height = 25 alt = 'R'></a> <a href='{url}.sav'><img src='img/spss.svg' width = 25 height = 25 alt = 'SPSS'></a>")
+    Download_xlsx = if_else(Download_xlsx != "", glue::glue("<a href='{data_url}/{Download_xlsx}'><img src='img/excel.svg' width = 25 height = 25 alt = 'Excel'></a>"), ""),
+    Download_sav = if_else(Download_sav != "", glue::glue("<a href='{data_url}/{Download_sav}'><img src='img/spss.svg' width = 25 height = 25 alt = 'Excel'></a>"), ""),
+    Download_dta = if_else(Download_dta != "", glue::glue("<a href='{data_url}/{Download_dta}'><img src='img/stata.svg' width = 25 height = 25 alt = 'Excel'></a>"), ""),
+    Download_csv = if_else(Download_csv != "", glue::glue("<a href='{data_url}/{Download_csv}'><img src='img/csv.svg' width = 25 height = 25 alt = 'CSV'></a>"), ""),
+    Download_rds = if_else(Download_rds != "", glue::glue("<a href='{data_url}/{Download_rds}'><img src='img/r.svg' width = 25 height = 25 alt = 'R'></a>"), ""),
+
+    Download = glue::glue("{Download_xlsx} {Download_dta} {Download_rds} {Download_csv} {Download_sav}", .na = "")
 
     # Download = glue::glue("<a href='{url}'>Raw</a> ({tools::file_ext(Filename)}, {Filesize})"),
   ) 
@@ -170,7 +176,7 @@ Detainers are requests that ICE makes to prisons and jails to hold individuals f
 df_list |> 
   # filter to just get the detainers by type
   filter(Type == "detainers_noid") |> 
-  arrange(Start) |>
+  arrange(Description, Start) |>
   transmute(Description, Start, End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs_description, pagination = FALSE)
 ```
@@ -350,9 +356,9 @@ df_list |>
 
 </details>
 
-### Family unit apprehensions
+### Annual apprehensions with place of origin
 
-This dataset includes apprehensions only of family units. The same apprehensions are included in some of the tables above. We post it here because it includes some fields that those datasets lack.
+This dataset includes each person's city and state of origin, but it lacks precise dates for each apprehension (it shows only the fiscal year), limiting its use. The file names suggest that these files only contain family apprehensions, but they actually contain all apprehensions.
 
 <details>
 <summary>Show datasets</summary>
@@ -370,7 +376,7 @@ df_list |>
 
 ## Executive Office for Immigration Review (Immigration Courts)
 
-The Executive Office for Immigration Review at the Department of Justice collects information on every immigration court case, including information on scheduling, case type, immigration charges, applications for relief, and appeals. The datasets includes records from the 1970s to the last year, though most are much more recent. The agency posts an updated dataset monthly in their [FOIA Library](https://www.justice.gov/eoir/foia-library-0). 
+The Executive Office for Immigration Review at the Department of Justice collects information on every immigration court case, including information on scheduling, case type, immigration charges, applications for relief, and appeals. The datasets includes records from the 1970s to the last year, though most are much more recent. The agency posts an updated dataset monthly in their [FOIA Library](https://www.justice.gov/eoir/foia-library-0), because of a FOIA request originally filed by [TRAC](https://tracreports.org). 
 
 <details>
 <summary>Show datasets</summary>
