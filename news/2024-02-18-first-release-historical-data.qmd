@@ -6,7 +6,7 @@ date: "2/12/2025"
 # date-modified: "5/23/2021"
 ---
 
-Our first release includes data in its original format from Immigrations and Customs Enforcement (ICE), Customs and Border Patrol (CBP), and the Executive Office for Immigration Review (EOIR). 
+Our first release includes data from Immigrations and Customs Enforcement (ICE), Customs and Border Patrol (CBP), and the Executive Office for Immigration Review (EOIR). 
 
 ### Data from ICE with Unique Identifiers
 
@@ -62,8 +62,8 @@ Title 42 expulsions
 Encounters 
 : This dataset includes all border arrests, both apprehensions and Title 42 expulsions.
 
-Family unit apprehensions
-: This dataset includes apprehensions only of family units. 
+Annual apprehensions with place of origin
+: This dataset includes each person’s city and state of origin, but it lacks precise dates for each apprehension (it shows only the fiscal year), limiting its use. 
 
 ### Executive Office for Immigration Review (Immigration Courts)
 
