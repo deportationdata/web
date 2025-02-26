@@ -15,7 +15,8 @@ website:
     left:
       # - href: guide.qmd
       #   text: Guide to data
-      - href: data.qmd
+      - text: "Data"
+        href: data.qmd
       - href: news.qmd
       - href: team.qmd
       - href: related.qmd
