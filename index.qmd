@@ -1,5 +1,5 @@
 ---
-title: "Deportation Data Projects"
+title: "Deportation Data Project"
 toc: false
 main-width: 900px
 ---
