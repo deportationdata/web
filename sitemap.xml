@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://deportationdata.org/team.html</loc>
-    <lastmod>2025-02-25T04:04:19.648Z</lastmod>
-  </url>
-  <url>
     <loc>https://deportationdata.org/related.html</loc>
-    <lastmod>2025-02-25T04:04:19.647Z</lastmod>
-  </url>
-  <url>
-    <loc>https://deportationdata.org/data.html</loc>
-    <lastmod>2025-02-25T04:04:19.643Z</lastmod>
-  </url>
-  <url>
-    <loc>https://deportationdata.org/news.html</loc>
-    <lastmod>2025-02-25T04:04:19.647Z</lastmod>
+    <lastmod>2025-02-26T20:24:30.197Z</lastmod>
   </url>
   <url>
     <loc>https://deportationdata.org/news/2024-02-18-first-release-historical-data.html</loc>
-    <lastmod>2025-02-25T04:04:19.647Z</lastmod>
+    <lastmod>2025-02-26T20:24:30.197Z</lastmod>
   </url>
   <url>
     <loc>https://deportationdata.org/index.html</loc>
-    <lastmod>2025-02-25T04:04:19.646Z</lastmod>
+    <lastmod>2025-02-26T20:24:30.196Z</lastmod>
+  </url>
+  <url>
+    <loc>https://deportationdata.org/data.html</loc>
+    <lastmod>2025-02-26T20:24:30.193Z</lastmod>
+  </url>
+  <url>
+    <loc>https://deportationdata.org/news.html</loc>
+    <lastmod>2025-02-26T20:24:30.197Z</lastmod>
+  </url>
+  <url>
+    <loc>https://deportationdata.org/team.html</loc>
+    <lastmod>2025-02-26T20:24:30.199Z</lastmod>
   </url>
 </urlset>
