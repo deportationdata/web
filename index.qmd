@@ -1,10 +1,10 @@
 ---
-title: "Deportation Data Project"
+title: "Deportation Data Projects"
 toc: false
 main-width: 900px
 ---
 
-<p style="font-size:22px; background-color: #b5d8ff; padding: 20px; border-radius: 5px;">The Deportation Data Project collects and posts public, anonymized U.S. government immigration enforcement datasets. We use the Freedom of Information Act to gather datasets directly from the government, and we also post datasets that the government has posted proactively or in response to others’ requests. We expect these datasets to be used by journalists, researchers, lawyers, and policymakers.</p>
+<p style="font-size:22px; line-height: 2rem; background-color: #D9E3E8; margin-top:25px; margin-bottom:25px; padding: 20px; border-radius: 5px;">The Deportation Data Project collects and posts public, anonymized U.S. government immigration enforcement datasets. We use the Freedom of Information Act to gather datasets directly from the government, and we also post datasets that the government has posted proactively or in response to others’ requests. We expect these datasets to be used by journalists, researchers, lawyers, and policymakers.</p>
 
 As a first step, we have posted the main datasets that we know of; in most cases, these datasets are out of date. We are seeking updates, and we will post those updates as we receive them.
 
@@ -18,7 +18,7 @@ We are grateful for the work of others, and especially of the [Transactional Rec
 
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-6}
 
-### Ask a data question 
+## Ask a data question 
 
 Let us know if we can answer your questions or, more likely, put you in touch with someone who can. 
 
@@ -28,7 +28,7 @@ Let us know if we can answer your questions or, more likely, put you in touch wi
 
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-6}
 
-### Share your data 
+## Share your data 
 
 Let your data work for others! If you have public, shareable immigration enforcement data from a FOIA request or discovery in litigation, we would love to post your data (crediting you) or link to your data repository. We can help connect you with others who can create visual tools using your data and/or can help analyze it. 
 

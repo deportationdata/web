@@ -29,21 +29,20 @@ df_list <-
   df_list |> 
   left_join(sources, by = "Location") |> 
   mutate(
-    url = glue::glue("{data_url}/{Location}/{tools::file_path_sans_ext(Filename)}"),
+    url = glue::glue("{data_url}/{Location}/{Filename}"),
     Start = as.Date(Start),
     End = as.Date(End),
     Records = `N records`,
     Records = format_numbers(Records),
     Source = glue::glue("<a href='{source_URL}'>{source_label}</a>"),
-    Download_xlsx = if_else(Download_xlsx != "", glue::glue("<a href='{data_url}/{Download_xlsx}'><img src='img/excel.svg' width = 25 height = 25 alt = 'Excel'></a>"), ""),
-    Download_sav = if_else(Download_sav != "", glue::glue("<a href='{data_url}/{Download_sav}'><img src='img/spss.svg' width = 25 height = 25 alt = 'Excel'></a>"), ""),
-    Download_dta = if_else(Download_dta != "", glue::glue("<a href='{data_url}/{Download_dta}'><img src='img/stata.svg' width = 25 height = 25 alt = 'Excel'></a>"), ""),
-    Download_csv = if_else(Download_csv != "", glue::glue("<a href='{data_url}/{Download_csv}'><img src='img/csv.svg' width = 25 height = 25 alt = 'CSV'></a>"), ""),
-    Download_rds = if_else(Download_rds != "", glue::glue("<a href='{data_url}/{Download_rds}'><img src='img/r.svg' width = 25 height = 25 alt = 'R'></a>"), ""),
-
-    Download = glue::glue("{Download_xlsx} {Download_dta} {Download_rds} {Download_csv} {Download_sav}", .na = "")
-
-    # Download = glue::glue("<a href='{url}'>Raw</a> ({tools::file_ext(Filename)}, {Filesize})"),
+    # Download_xlsx = if_else(Download_xlsx != "", glue::glue("<a href='{data_url}/{Download_xlsx}'><img src='img/excel.svg' width = 25 height = 25 alt = 'Excel'></a>"), ""),
+    # Download_sav = if_else(Download_sav != "", glue::glue("<a href='{data_url}/{Download_sav}'><img src='img/spss.svg' width = 25 height = 25 alt = 'Excel'></a>"), ""),
+    # Download_dta = if_else(Download_dta != "", glue::glue("<a href='{data_url}/{Download_dta}'><img src='img/stata.svg' width = 25 height = 25 alt = 'Excel'></a>"), ""),
+    # Download_csv = if_else(Download_csv != "", glue::glue("<a href='{data_url}/{Download_csv}'><img src='img/csv.svg' width = 25 height = 25 alt = 'CSV'></a>"), ""),
+    # Download_rds = if_else(Download_rds != "", glue::glue("<a href='{data_url}/{Download_rds}'><img src='img/r.svg' width = 25 height = 25 alt = 'R'></a>"), ""),
+    # 
+    # Download = glue::glue("{Download_xlsx} {Download_dta} {Download_rds} {Download_csv} {Download_sav}", .na = "")
+    Download = glue::glue("<a href='{url}'>{tools::file_ext(Filename)}</a> ({Filesize})"),
   ) 
 
 col_defs <- list(
