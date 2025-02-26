@@ -65,7 +65,7 @@ col_defs_description <- list(
 
 This page collects and reposts individual-level Immigration and Customs Enforcement (ICE), Customs and Border Patrol (CBP), and Justice Department Executive Office of Immigration Review (EOIR) datasets. In most cases, these datasets are also available for download elsewhere. The original source is always a government agency (ICE, CBP or EOIR), but where other third parties have posted the data before we have, we link to their sites as the source.
 
-## Immigration and Customs Enforcement (with Unique Identifiers)
+## Immigration and Customs Enforcement<br>(with Unique Identifiers)
 
 ICE collects data on every person it encounters, arrests, detains, and deports. This section includes the datasets for which ICE has provided unique identifiers that correspond to individuals, allowing them to be followed anonymously through the stages of the enforcement process.
 
@@ -142,7 +142,7 @@ df_list |>
 
 </details>
 
-## Immigration and Customs Enforcement (without Unique Identifiers)
+## Immigration and Customs Enforcement<br>(without Unique Identifiers)
 
 This section includes other, unlinked ICE datasets. Many of these overlap with the linked data available for download above.
 
@@ -373,7 +373,7 @@ df_list |>
 
 </details>
 
-## Executive Office for Immigration Review (Immigration Courts)
+## Executive Office for Immigration Review<br>(Immigration Courts)
 
 The Executive Office for Immigration Review at the Department of Justice collects information on every immigration court case, including information on scheduling, case type, immigration charges, applications for relief, and appeals. The datasets includes records from the 1970s to the last year, though most are much more recent. The agency posts an updated dataset monthly in their [FOIA Library](https://www.justice.gov/eoir/foia-library-0), because of a FOIA request originally filed by [TRAC](https://tracreports.org). 
 
