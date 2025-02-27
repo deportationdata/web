@@ -63,8 +63,7 @@ col_defs_description <- list(
 )
 
 options(reactable.theme = reactableTheme(
-  backgroundColor = "#F4F6F7",
-  borderColor = "#F4F6F7"
+  backgroundColor = "#F4F6F7"
 ))
 ```
 
@@ -195,12 +194,19 @@ This file includes some (out-of-date) information on ICE detention facilities.
 <summary>Show datasets</summary>
 
 ```{r}
+col_defs_facilities <- list(
+  Date = colDef(minWidth = 75), 
+  Records = colDef(minWidth = 55, align = "right"),
+  Source = colDef(minWidth = 65, html = TRUE),
+  Download = colDef(minWidth = 100, html = TRUE)
+)
+
 df_list |> 
   # filter to just get the detainers by type
   filter(Type == "facilities_noid") |> 
   arrange(Start) |>
-  transmute(Start, End, Records, Records, Source, Download) |> 
-  reactable::reactable(columns = col_defs, pagination = FALSE)
+  transmute(Date = Start, Records, Records, Source, Download) |> 
+  reactable::reactable(columns = col_defs_facilities, pagination = FALSE)
 ```
 
 
