@@ -61,6 +61,11 @@ col_defs_description <- list(
   Source = colDef(minWidth = 65, html = TRUE),
   Download = colDef(minWidth = 100, html = TRUE)
 )
+
+options(reactable.theme = reactableTheme(
+  backgroundColor = "#F4F6F7",
+  borderColor = "#F4F6F7"
+))
 ```
 
 This page collects and reposts individual-level Immigration and Customs Enforcement (ICE), Customs and Border Patrol (CBP), and Justice Department Executive Office of Immigration Review (EOIR) datasets. In most cases, these datasets are also available for download elsewhere. The original source is always a government agency (ICE, CBP or EOIR), but where other third parties have posted the data before we have, we link to their sites as the source.
