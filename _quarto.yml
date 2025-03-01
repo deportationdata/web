@@ -33,7 +33,7 @@ format:
     theme:
       - cosmo
       - custom.scss
-    # css: styles.css
+    css: styles.css
     toc: true
 
 execute:
