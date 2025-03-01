@@ -14,7 +14,33 @@ h3 {
 $font-family-serif: 'Playfair Display', serif;
 $font-family-sans-serif: 'Open Sans', sans-serif;
 
+$primary: #1E3A5F; // Default outline color
+$primary-hover: #142B44; // Hover fill color
+
 /*-- scss:rules --*/
+
+a {
+  color: #1E3A5F; // Your preferred link color
+  text-decoration: underline;
+  text-decoration-thickness: 0.6px; // Adjust thickness to make it lighter
+  text-underline-offset: 3px; // Moves the underline slightly below the text for a cleaner look
+
+  &:hover {
+    text-decoration-thickness: 1.5px; // Slightly thicker on hover for emphasis
+  }
+}
+
+.btn-custom {
+  color: $primary;
+  border: 2px solid $primary;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $primary-hover;
+    color: white; // Ensures text is readable
+  }
+}
 
 h1,
 h2,
