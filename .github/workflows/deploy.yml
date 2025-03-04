@@ -44,15 +44,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
 
-      - name: Comment on PR
-        uses: hasura/comment-progress@v2.2.0
-        if: github.event_name == 'pull_request'
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ${{ github.repository }}
-          number: ${{ github.event.number }}
-          id: deploy-preview
-          message: "Starting deployment of preview ⏳..."
+      # - name: Comment on PR
+      #   uses: hasura/comment-progress@v2.2.0
+      #   if: github.event_name == 'pull_request'
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     repository: ${{ github.repository }}
+      #     number: ${{ github.event.number }}
+      #     id: deploy-preview
+      #     message: "Starting deployment of preview ⏳..."
 
       - name: Publish to GitHub Pages (and render)
         if: github.event_name == 'pull_request'
@@ -63,12 +63,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
 
-      - name: Update comment
-        uses: hasura/comment-progress@v2.2.0
-        if: github.ref != 'refs/heads/main'
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ${{ github.repository }}
-          number: ${{ github.event.number }}
-          id: deploy-preview
-          message: "A preview of ${{ github.event.after }} is uploaded and can be seen here:\n\n ✨https://deportationdata.org/preview/pr-${{ github.event.pull_request.number }}/ ✨\n\nChanges may take a few minutes to propagate. Since this is a preview of production, content with `draft: true` will not be rendered. The source is here: https://github.com/${{ github.repository }}/tree/gh-pages/${{ env.PR_PATH }}/"
+      # - name: Update comment
+      #   uses: hasura/comment-progress@v2.2.0
+      #   if: github.ref != 'refs/heads/main'
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     repository: ${{ github.repository }}
+      #     number: ${{ github.event.number }}
+      #     id: deploy-preview
+      #     message: "A preview of ${{ github.event.after }} is uploaded and can be seen here:\n\n ✨https://deportationdata.org/preview/pr-${{ github.event.pull_request.number }}/ ✨\n\nChanges may take a few minutes to propagate. Since this is a preview of production, content with `draft: true` will not be rendered. The source is here: https://github.com/${{ github.repository }}/tree/gh-pages/${{ env.PR_PATH }}/"
