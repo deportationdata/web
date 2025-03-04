@@ -5,6 +5,7 @@ listing:
   contents: news
   sort: "date desc"
   type: table
+  fields: [date, title]
   categories: false
   filter-ui: false
   sort-ui: false
