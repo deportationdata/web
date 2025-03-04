@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="David Hausman">
-<meta name="dcterms.date" content="2025-02-12">
+<meta name="dcterms.date" content="2025-03-06">
 
-<title>First release: historical data – Deportation Data Project</title>
+<title>First data release: historical data – Deportation Data Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -120,8 +119,10 @@ gtag('config', 'G-FL9SCY5B31', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#data-from-ice-with-unique-identifiers" id="toc-data-from-ice-with-unique-identifiers" class="nav-link active" data-scroll-target="#data-from-ice-with-unique-identifiers">Data from ICE with Unique Identifiers</a></li>
-  <li><a href="#data-from-ice-without-unique-identifiers" id="toc-data-from-ice-without-unique-identifiers" class="nav-link" data-scroll-target="#data-from-ice-without-unique-identifiers">Data from ICE without Unique Identifiers</a></li>
+  <li><a href="#data-from-ice-without-unique-identifiers" id="toc-data-from-ice-without-unique-identifiers" class="nav-link" data-scroll-target="#data-from-ice-without-unique-identifiers">Data from ICE without Unique Identifiers</a>
+  <ul class="collapse">
   <li><a href="#customs-and-border-protection" id="toc-customs-and-border-protection" class="nav-link" data-scroll-target="#customs-and-border-protection">Customs and Border Protection</a></li>
+  </ul></li>
   <li><a href="#executive-office-for-immigration-review-immigration-courts" id="toc-executive-office-for-immigration-review-immigration-courts" class="nav-link" data-scroll-target="#executive-office-for-immigration-review-immigration-courts">Executive Office for Immigration Review (Immigration Courts)</a></li>
   </ul>
 </nav>
@@ -131,24 +132,18 @@ gtag('config', 'G-FL9SCY5B31', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">First release: historical data</h1>
+<h1 class="title">First data release: historical data</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>David Hausman </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 12, 2025</p>
+      <p class="date">March 6, 2025</p>
     </div>
   </div>
   
@@ -161,8 +156,8 @@ gtag('config', 'G-FL9SCY5B31', { 'anonymize_ip': true});
 
 
 <p>Our first release includes data from Immigrations and Customs Enforcement (ICE), Customs and Border Patrol (CBP), and the Executive Office for Immigration Review (EOIR).</p>
-<section id="data-from-ice-with-unique-identifiers" class="level3">
-<h3 class="anchored" data-anchor-id="data-from-ice-with-unique-identifiers">Data from ICE with Unique Identifiers</h3>
+<section id="data-from-ice-with-unique-identifiers" class="level2">
+<h2 class="anchored" data-anchor-id="data-from-ice-with-unique-identifiers">Data from ICE with Unique Identifiers</h2>
 <p>ICE collects data on every person it encounters, arrests, detains, and deports. This section includes the datasets for which ICE has provided unique identifiers that correspond to individuals, allowing them to be followed anonymously through the stages of the enforcement process.</p>
 <dl>
 <dt>Arrests</dt>
@@ -183,8 +178,8 @@ This dataset includes a row for every removal (deportation) that ICE conducted.
 </dd>
 </dl>
 </section>
-<section id="data-from-ice-without-unique-identifiers" class="level3">
-<h3 class="anchored" data-anchor-id="data-from-ice-without-unique-identifiers">Data from ICE without Unique Identifiers</h3>
+<section id="data-from-ice-without-unique-identifiers" class="level2">
+<h2 class="anchored" data-anchor-id="data-from-ice-without-unique-identifiers">Data from ICE without Unique Identifiers</h2>
 <p>This section includes other, unlinked ICE datasets. Many of these overlap with the linked data described above.</p>
 <dl>
 <dt>Arrests</dt>
@@ -212,7 +207,6 @@ Data on ICE-operated charter flights and passenger manifests from the Immigratio
 This dataset includes a row for every removal (deportation) that ICE conducted.
 </dd>
 </dl>
-</section>
 <section id="customs-and-border-protection" class="level3">
 <h3 class="anchored" data-anchor-id="customs-and-border-protection">Customs and Border Protection</h3>
 <p>CBP collects individual-level data on every person it arrests or expels at the border as well as on every person who arrives at a port of entry whom it deems inadmissible (most frequently asylum seekers). Border arrest data are collected by the Border Patrol; inadmissible arrivals data are collected by the Office of Field Operations.</p>
@@ -239,8 +233,9 @@ This dataset includes each person’s city and state of origin, but it lacks pre
 </dd>
 </dl>
 </section>
-<section id="executive-office-for-immigration-review-immigration-courts" class="level3">
-<h3 class="anchored" data-anchor-id="executive-office-for-immigration-review-immigration-courts">Executive Office for Immigration Review (Immigration Courts)</h3>
+</section>
+<section id="executive-office-for-immigration-review-immigration-courts" class="level2">
+<h2 class="anchored" data-anchor-id="executive-office-for-immigration-review-immigration-courts">Executive Office for Immigration Review (Immigration Courts)</h2>
 <p>The Executive Office for Immigration Review at the Department of Justice collects information on every immigration court case, including information on scheduling, case type, immigration charges, applications for relief, and appeals.</p>
 
 
