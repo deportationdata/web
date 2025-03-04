@@ -1,6 +1,6 @@
 ---
 title: "U.S. Immigration Enforcement Data"
-subtitle: "A Short Guide "
+subtitle: "A Short Guide"
 template-partials:
   - partials/title-metadata.html
 reference-location: margin
