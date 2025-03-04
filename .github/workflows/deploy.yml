@@ -44,16 +44,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
 
-      # - name: Comment on PR
-      #   uses: hasura/comment-progress@v2.2.0
-      #   if: github.event_name == 'pull_request'
-      #   with:
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
-      #     repository: ${{ github.repository }}
-      #     number: ${{ github.event.number }}
-      #     id: deploy-preview
-      #     message: "Starting deployment of preview ⏳..."
-
       - name: Render preview
         if: github.event_name == 'pull_request'
         uses: quarto-dev/quarto-actions/render@v2
@@ -84,12 +74,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # - name: Update comment
-      #   uses: hasura/comment-progress@v2.2.0
-      #   if: github.ref != 'refs/heads/main'
-      #   with:
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
-      #     repository: ${{ github.repository }}
-      #     number: ${{ github.event.number }}
-      #     id: deploy-preview
-      #     message: "A preview of ${{ github.event.after }} is uploaded and can be seen here:\n\n ✨https://deportationdata.org/preview/pr-${{ github.event.pull_request.number }}/ ✨\n\nChanges may take a few minutes to propagate. Since this is a preview of production, content with `draft: true` will not be rendered. The source is here: https://github.com/${{ github.repository }}/tree/gh-pages/${{ env.PR_PATH }}/"
+      - uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const repoOwner = context.repo.owner;
+            const repoName = context.repo.repo;
+            const previewUrl = `https://deportationdata.org/preview/pr-${prNumber}/`;
+
+            github.rest.issues.createComment({
+              owner: repoOwner,
+              repo: repoName,
+              issue_number: prNumber,
+              body: `🚀 PR Preview Available: [View Here](${previewUrl})`
+            });
