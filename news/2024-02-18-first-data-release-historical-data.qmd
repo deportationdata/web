@@ -1,14 +1,13 @@
 ---
-title: "First release: historical data"
+title: "First data release: historical data"
 # description: "Post description"
-author: "David Hausman"
-date: "2/12/2025"
+date: "3/6/2025"
 # date-modified: "5/23/2021"
 ---
 
 Our first release includes data from Immigrations and Customs Enforcement (ICE), Customs and Border Patrol (CBP), and the Executive Office for Immigration Review (EOIR). 
 
-### Data from ICE with Unique Identifiers
+## Data from ICE with Unique Identifiers
 
 ICE collects data on every person it encounters, arrests, detains, and deports. This section includes the datasets for which ICE has provided unique identifiers that correspond to individuals, allowing them to be followed anonymously through the stages of the enforcement process.
 
@@ -24,7 +23,7 @@ Detentions
 Removals (deportations)
 : This dataset includes a row for every removal (deportation) that ICE conducted.
 
-### Data from ICE without Unique Identifiers
+## Data from ICE without Unique Identifiers
 
 This section includes other, unlinked ICE datasets. Many of these overlap with the linked data described above.
 
@@ -65,6 +64,6 @@ Encounters
 Annual apprehensions with place of origin
 : This dataset includes each person’s city and state of origin, but it lacks precise dates for each apprehension (it shows only the fiscal year), limiting its use. 
 
-### Executive Office for Immigration Review (Immigration Courts)
+## Executive Office for Immigration Review (Immigration Courts)
 
 The Executive Office for Immigration Review at the Department of Justice collects information on every immigration court case, including information on scheduling, case type, immigration charges, applications for relief, and appeals. 
