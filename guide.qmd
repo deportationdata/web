@@ -11,9 +11,10 @@ author:
       - name: Assistant Professor, UC Berkeley School of Law
       - name: Faculty Director, Deportation Data Project
 citation:
-  container-title: California Law Review
-  volume: 1
-  issue: 1
+  container-title: Calif. L. Rev. Online
+  volume: 16
+  issue: 13
+  year: 2025
   doi: 10.5555/12345678
 date: March 5, 2025
 ---
