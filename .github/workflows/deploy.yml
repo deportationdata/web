@@ -54,14 +54,40 @@ jobs:
       #     id: deploy-preview
       #     message: "Starting deployment of preview ⏳..."
 
-      - name: Publish to GitHub Pages (and render)
+      # - name: Publish to GitHub Pages (and render)
+      #   if: github.event_name == 'pull_request'
+      #   uses: quarto-dev/quarto-actions/publish@v2
+      #   with:
+      #     target: gh-pages
+      #     path: preview/pr-${{ github.event.pull_request.number }}
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+
+      - name: Checkout gh-pages branch
         if: github.event_name == 'pull_request'
-        uses: quarto-dev/quarto-actions/publish@v2
+        uses: actions/checkout@v4
         with:
-          target: gh-pages
-          path: preview/pr-${{ github.event.pull_request.number }}
+          ref: gh-pages
+          path: gh-pages
+          fetch-depth: 1
+
+      - name: Move rendered site to PR-specific preview folder
+        if: github.event_name == 'pull_request'
+        run: |
+          mkdir -p gh-pages/preview/pr-${{ github.event.pull_request.number }}
+          rsync -av --delete _site/ gh-pages/preview/pr-${{ github.event.pull_request.number }}/
+
+      - name: Commit and Push to gh-pages
+        if: github.event_name == 'pull_request'
+        run: |
+          cd gh-pages
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add .
+          git commit -m "Deploy PR preview #${{ github.event.pull_request.number }}" || echo "No changes to commit"
+          git push origin gh-pages
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Update comment
       #   uses: hasura/comment-progress@v2.2.0
