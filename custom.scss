@@ -3,6 +3,7 @@ $h1-font-size:   2.1rem !default;
 $h2-font-size:   1.8rem !default;
 $h3-font-size:   1.3rem !default;
 
+$body-bg: #F4F6F7;
 $footer-bg: #F4F6F7;
 
 h3 {
@@ -22,11 +23,13 @@ $primary-hover: #142B44; // Hover fill color
 a {
   color: #1E3A5F; // Your preferred link color
   text-decoration: underline;
-  text-decoration-thickness: 0.6px; // Adjust thickness to make it lighter
+  text-decoration-color: #637284;
+  text-decoration-thickness: 1px; // Adjust thickness to make it lighter
   text-underline-offset: 3px; // Moves the underline slightly below the text for a cleaner look
 
   &:hover {
-    text-decoration-thickness: 1.5px; // Slightly thicker on hover for emphasis
+    text-decoration-thickness: 2px;
+    text-decoration-color: #1E3A5F; // Slightly thicker on hover for emphasis
   }
 }
 
@@ -68,10 +71,18 @@ p {
   color: white;
 }
 
-// set background color to F9FAFB
+/* set background color to F9FAFB
 body {
   background-color: #F4F6F7;
 }
+
+#footnotes {
+  background-color: #F4F6F7;
+}
+
+.quarto-appendix-heading {
+  background-color: #F4F6F7;
+}*/
 
 // set navbar color
 .navbar {

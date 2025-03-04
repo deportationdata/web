@@ -6,12 +6,15 @@ This page includes links to related projects that use immigration enforcement da
 
 ## Immigration policy
 
-* [Immigration Policy Tracker](https://immpolicytracking.org)
-: Compiles and indexes all identifiable Trump 1.0 and 2.0 immigration policies with key source documents and continually updates each entry to show its current status.
+
+[Immigration Policy Tracker](https://immpolicytracking.org)  <img src="img/policy_tracker.png" width=250 align="left" style="padding-right: 15px">
+: Compiles and indexes all identifiable Trump 1.0 and 2.0 immigration policies with key source documents and continually updates each entry to show its current status. 
+
+<div style="clear: both;"></div>
 
 ## Data analysis and visualization
 
-* [Transaction Records Clearinghouse: Immigration](https://tracreports.org/immigration)
+* [Transaction Records Clearinghouse: Immigration](https://tracreports.org/immigration) <img src="img/trac.png" width=250 align="right">
 : Immigration courts, detention, and deportation data.
 
 * [University of Washington Center for Human Rights](https://jsis.washington.edu/humanrights/)
@@ -29,8 +32,11 @@ This page includes links to related projects that use immigration enforcement da
 <!-- * [Immigration Commons](https://immigrationcommons.org) -->
 <!-- : Data analysis and visualization platform on immigration court proceedings for civil society and local government.  -->
 
-* [Mobile Pathways](https://www.mobilepathways.org)
+[Mobile Pathways](https://www.mobilepathways.org)  <img src="img/mobile-pathways.png" width=250 align="left" style="padding-right: 15px">
 : Uses mobile phone technology, data, and AI to help immigrants in court navigate the legal immigration process.
+
+<div style="clear: both;"></div>
+
 
 ## Data acquisition
 
