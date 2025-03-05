@@ -12,7 +12,9 @@ author:
       - name: Faculty Director, Deportation Data Project
 citation:
   container-title: Calif. L. Rev. Online
+  type: article-journal
   volume: 16
+  issued: 2025
   issue: 13
   doi: 10.5555/12345678
 date: March 5, 2025
