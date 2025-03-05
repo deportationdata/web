@@ -31,10 +31,14 @@ This page includes links to related projects that use immigration enforcement da
   - [Deportation Data Information Hub](https://www.vera.org/ending-mass-incarceration/reducing-incarceration/detention-of-immigrants/advancing-universal-representation-initiative/state-and-local-deportation-defense-information-hub)
   - [ICE Detention Trends Dashboard](https://www.vera.org/ice-detention-trends)
 
+<div style="clear: both;"></div>
+
 ## Data acquisition
 
 [American Immigration Council Transparency Initiative](https://www.americanimmigrationcouncil.org/what-we-do/government-transparency)
 : Uses the Freedom of Information Act to secure data and documentation from government agencies and take them to court when they fail to comply. 
+
+<div style="clear: both;"></div>
 
 ## Tools for advocates and governments
 
@@ -47,6 +51,4 @@ This page includes links to related projects that use immigration enforcement da
 : Uses mobile phone technology, data, and AI to help immigrants in court navigate the legal immigration process.
 
  - [Asylum Navigator Dashboard](https://www.mobilepathways.org/dashboards/asylum-navigator-dashboard)
-
-<div style="clear: both;"></div>
 
