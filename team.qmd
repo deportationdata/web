@@ -1,5 +1,6 @@
 ---
 title: "Team"
+toc: false
 ---
 
 We are academics and lawyers who share a commitment to transparency in immigration enforcement data.
