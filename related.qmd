@@ -32,7 +32,7 @@ This page includes links to related projects that use immigration enforcement da
 
 ## Tools for advocates and governments
 
-<div style="float: left; padding-right: 15px"><img src="img/mobile-pathways-screenshot.png" alt="Preview of Vera Detention Trends Dashboard" width=250><br><figcaption>Source: Mobile Pathways</figcaption></div>
+<div style="float: right; padding-left: 15px"><img src="img/mobile-pathways-screenshot.png" alt="Preview of Vera Detention Trends Dashboard" width=250><br><figcaption>Source: Mobile Pathways</figcaption></div>
 
 <!-- * [Immigration Commons](https://immigrationcommons.org) -->
 <!-- : Data analysis and visualization platform on immigration court proceedings for civil society and local government.  -->
