@@ -6,9 +6,7 @@ This page includes links to related projects that use immigration enforcement da
 
 ## Immigration policy
 
-<!-- <img src="img/policy_tracker.png" width=250 align="left" style="padding-right: 15px"> -->
-
-![Source: Immigration Policy Tracker](img/policy-tracker-screenshot.png)
+<div style="float: right; padding-left: 15px"><img src="img/policy-tracker-screenshot.png" alt="Preview of Immigration Policy Tracker" width=250><br><figcaption>Source: Immigration Policy Tracker</figcaption></div>
 
 [Immigration Policy Tracker](https://immpolicytracking.org)  
 : Compiles and indexes all identifiable Trump 1.0 and 2.0 immigration policies with key source documents and continually updates each entry to show its current status. 
@@ -17,16 +15,15 @@ This page includes links to related projects that use immigration enforcement da
 
 ## Data analysis and visualization
 
-<!-- <img src="img/trac.png" width=250 align="right"> -->
-![Source: Vera Institute](img/vera-screenshot.png)
+<div style="float: right; padding-left: 15px"><img src="img/vera-screenshot.png" alt="Preview of Vera Detention Trends Dashboard" width=250><br><figcaption>Source: Vera Institute</figcaption></div>
 
-* [Transaction Records Clearinghouse: Immigration](https://tracreports.org/immigration)
+[Transaction Records Clearinghouse: Immigration](https://tracreports.org/immigration)
 : Immigration courts, detention, and deportation data.
 
-* [University of Washington Center for Human Rights](https://jsis.washington.edu/humanrights/)
+[University of Washington Center for Human Rights](https://jsis.washington.edu/humanrights/)
 : Detention and deportation data including on ICE deporation flights ("ICE Air").
 
-* [Vera Institute](https://www.vera.org)
+[Vera Institute](https://www.vera.org)
 : Immigration courts, detention, and deportation data.
 
   - [Immigration Court Legal Representation Dashboard](https://www.vera.org/ending-mass-incarceration/reducing-incarceration/detention-of-immigrants/advancing-universal-representation-initiative/immigration-data-tools-and-maps)
@@ -35,19 +32,19 @@ This page includes links to related projects that use immigration enforcement da
 
 ## Tools for advocates and governments
 
+<div style="float: left; padding-right: 15px"><img src="img/mobile-pathways-screenshot.png" alt="Preview of Vera Detention Trends Dashboard" width=250><br><figcaption>Source: Mobile Pathways</figcaption></div>
+
 <!-- * [Immigration Commons](https://immigrationcommons.org) -->
 <!-- : Data analysis and visualization platform on immigration court proceedings for civil society and local government.  -->
 
-[Mobile Pathways](https://www.mobilepathways.org)  ![Source: Mobile Pathways](img/mobile-pathways-screenshot.png)
-<!-- <img src="img/mobile-pathways.png" width=250 align="left" style="padding-right: 15px"> -->
+[Mobile Pathways](https://www.mobilepathways.org) 
 : Uses mobile phone technology, data, and AI to help immigrants in court navigate the legal immigration process.
 
 <div style="clear: both;"></div>
 
-
 ## Data acquisition
 
-* [American Immigration Council Transparency Initiative](https://www.americanimmigrationcouncil.org/what-we-do/government-transparency)
+[American Immigration Council Transparency Initiative](https://www.americanimmigrationcouncil.org/what-we-do/government-transparency)
 : Uses the Freedom of Information Act to secure data and documentation from government agencies and take them to court when they fail to comply. 
 
 
