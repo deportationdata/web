@@ -17,8 +17,6 @@ website:
         href: guide.qmd
       - text: "Data"
         href: data.qmd
-      - text: Cases
-        href: cases.qmd
       - href: news.qmd
       - href: team.qmd
       - href: related.qmd
