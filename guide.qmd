@@ -9,7 +9,6 @@ author:
     email: dkhausman@berkeley.edu
     affiliation: 
       - name: Assistant Professor, UC Berkeley School of Law
-      - name: Faculty Director, Deportation Data Project
 citation:
   container-title: Calif. L. Rev. Online
   type: article-journal
