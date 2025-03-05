@@ -40,6 +40,8 @@ This page includes links to related projects that use immigration enforcement da
 [Mobile Pathways](https://www.mobilepathways.org) 
 : Uses mobile phone technology, data, and AI to help immigrants in court navigate the legal immigration process.
 
+ - [Asylum Navigator Dashboard](https://www.mobilepathways.org/dashboards/asylum-navigator-dashboard)
+
 <div style="clear: both;"></div>
 
 ## Data acquisition
