@@ -1,5 +1,6 @@
 ---
 title: "Team"
+toc: false
 ---
 
 We are academics and lawyers who share a commitment to transparency in immigration enforcement data.
@@ -16,13 +17,15 @@ Amber has extensive experience in federal court litigation on immigration and tr
 
 <div style="clear: both;"></div>
 
+<div class="team-name"><img src="img/blair.jpg" width=250 align="right" class="team-headshot">**Graeme Blair, Deputy Director for Data.** [Website](https://graemeblair.com)</div>
+
+Graeme is an associate professor of political science at UCLA. He studies policing and how to make social science more credible, ethical, and useful. His book, *Research Design in the Social Sciences* was published by Princeton University Press in 2023, and his book *Crime, insecurity, and community policing* was published by Cambridge University Press in 2024. He received his Ph.D. in politics from Princeton University and his B.A. in political science from Reed College. He is the receipient of the Leamer-Rosenthal Prize in Open Social Science. 
+
+<div style="clear: both;"></div>
+
 <div class="team-name">**Elora Mukherjee, Faculty Fellow.** [Website](https://www.law.columbia.edu/faculty/elora-mukherjee)<img src="img/mukherjee.jpg" width=250 align="right" class="team-headshot"></div>   
 
 Elora is the Jerome L. Greene Clinical Professor of Law and Director of the Immigrants’ Rights Clinic at Columbia Law School and a globally recognized advocate, practitioner, and voice for immigrants, asylum seekers, and unaccompanied migrant children. For more than a decade, Mukherjee has worked on issues related to enforcing the Flores Settlement Agreement, which sets a limit on the length of time children can be detained in federal immigration custody. Mukherjee began her career as a clerk for the Hon. Judge Jan E. DuBois of the U.S. District Court for the Eastern District of Pennsylvania and then won a fellowship with the ACLU Racial Justice Program. From 2007 to 2010, she worked at a law firm, specializing in police misconduct, prisoners’ rights, housing, and employment discrimination, and then rejoined the ACLU as a staff attorney until 2013.
-
-<div class="team-name"><img src="img/blair.jpg" width=250 align="right" class="team-headshot">**Graeme Blair** [Website](https://graemeblair.com)</div>
-
-Graeme is an associate professor of political science at UCLA. He studies policing and how to make social science more credible, ethical, and useful. His book, *Research Design in the Social Sciences* was published by Princeton University Press in 2023, and his book *Crime, insecurity, and community policing* was published by Cambridge University Press in 2024. He received his Ph.D. in politics from Princeton University and his B.A. in political science from Reed College. He is the receipient of the Leamer-Rosenthal Prize in Open Social Science. 
 
 <div style="clear: both;"></div>
 

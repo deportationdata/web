@@ -1,0 +1,121 @@
+---
+title: "U.S. Immigration Enforcement Data"
+subtitle: "A Short Guide"
+template-partials:
+  - partials/title-metadata.html
+reference-location: margin
+author:
+  - name: David Hausman 
+    email: dkhausman@berkeley.edu
+    affiliation: 
+      - name: Assistant Professor, UC Berkeley School of Law
+citation:
+  container-title: Calif. L. Rev. Online
+  type: article-journal
+  volume: 16
+  issued: 2025
+  issue: 13
+  # doi: https://doi.org/10.15779/Z3
+date: March 5, 2025
+---
+
+Also published in the [*California Law Review Online*](https://www.californialawreview.org/online/immigration-enforcement-guide). 
+
+## Introduction
+
+Administrative datasets on immigration enforcement—the government’s own records of immigration arrests, detentions, and deportations—are increasingly central to immigration journalism, research, and litigation. Access to individual-level data (i.e. data including a row for each person or action) from Customs and Border Protection (CBP), Immigration and Customs Enforcement (ICE), and the Executive Office for Immigration Review (EOIR), has made this trend possible.
+
+Yet no central resource has posted these individual-level datasets and offered guidance on their use. This data guide announces a new open online repository for these datasets, the Deportation Data Project at UC Berkeley School of Law ([deportationdata.org](http://deportationdata.org)). In order to help users navigate this resource, this data guide, cross posted on the Deportation Data Project website, describes the background and goals of the project and then offers a brief introduction to the main datasets and their relationship to the deportation process. It also offers links to existing journalism and research drawing on these datasets, along with examples of possible new analyses that the datasets make possible.
+
+## Announcing the Deportation Data Project: Collecting, Linking, and Documenting Enforcement Data
+
+The U.S. government logs every individual immigration arrest, immigration detention book-in, immigration court outcome, and deportation. But this information is nonetheless difficult to use for three main reasons: 1) infrequent and inconsistent data releases, 2) insufficient linking across datasets, and 3) insufficient documentation. The Deportation Data Project aims to help on all three fronts.
+
+First, many of these datasets are not released proactively, but instead only ad hoc, in response to Freedom of Information Act (FOIA) requests to agencies that often have years-long response backlogs. This is not true of every dataset; for example, thanks to the efforts of the [Transactional Records Access Clearinghouse](http://tracreports.org/), the immigration courts post their dataset monthly. The Deportation Data Project will work to obtain data from the other enforcement agencies at regular intervals as well, bringing lawsuits to expedite FOIA releases where necessary.
+
+Second, these datasets are siloed. The immigration court data is unconnected with the ICE data, meaning there is no way to know which ICE arrests and detentions correspond to which immigration court outcomes. And the CBP data is not connected with either. In other words, if an individual was processed at the border by CBP, the data fails to identify which rows in each dataset correspond to that individual’s possible immigration detention and immigration court proceedings. In fact, before a recent [FOIA win](https://casetext.com/case/am-civil-liberties-union-immigrants-rights-project-v-united-states), data was siloed even within ICE’s database in FOIA releases.^[For the court’s decision on the FOIA request and the description of the ICE Database, see generally ACLU v. ICE, 58 F.4th 643 (2d Cir. 2023).] While this problem is now mostly solved within the ICE dataset, the absence of linked data across agencies remains a central obstacle. A key goal of the project is to obtain these links between relevant agency databases through FOIA requests.
+
+Finally, understanding the datasets requires understanding the complex institutional arrangements of the immigration enforcement system and drawing inferences about the meaning of the data despite often incomplete documentation. The project aims to collect the government data documentation that exists and supplement that documentation with knowledge shared with us by users of the datasets. This guide provides a starting place in that documentation effort, explaining in broad terms what information is in each dataset.
+
+## Immigration Enforcement Actions and their Data Footprints
+
+A deportation case typically starts either at the border (with an arrest along the border or a determination of inadmissibility at a port of entry), or in the interior (with an ICE arrest). After the initial arrest, the first key question is whether the case will move along a fast track or proceed in immigration court. Fast-track removals can begin with either ICE or CBP, and include [expedited removal](https://www.americanimmigrationcouncil.org/research/expedited-removal) (until recently, limited to arrests at the border), [reinstatement of removal](https://www.americanimmigrationcouncil.org/practice_advisory/reinstatement-removal) (for individuals previously removed from the United States), or (more recently) [expulsion](https://crsreports.congress.gov/product/pdf/LSB/LSB11178) under an emergency executive authority. If a fast-track removal does not occur, cases are typically adjudicated in immigration court, where EOIR tracks outcomes.
+
+Each part of these processes is trackable in data from these three agencies. I describe the available data from CBP, ICE, and EOIR in turn, with examples of how these datasets have been and can be used.
+
+### Customs and Border Protection Data
+
+Border Patrol logs each arrest that it makes, and the CBP Office of Field Operations (OFO) logs each time it determines that someone is inadmissible at a port of entry. The Deportation Data Project collects and posts both of these publicly available CBP datasets. Much, but not all, of this data is also posted in the [CBP FOIA Reading Room](https://www.cbp.gov/newsroom/accountability-and-transparency/foia-reading-room). Individual-level data is currently available for the period from October 1, 2007, to September 2024, but the dataset has a recent hole: it is missing records of Title 42 expulsions (summary expulsions at the border on public health grounds) from June 2022 through September 2022. (Of course, updates may be posted at any time; when they are, the Deportation Data Project will repost them.)
+
+The Border Patrol arrest data includes the date of each arrest; the nationality, gender, and age of each arrestee; whether that arrestee was a single adult, an unaccompanied child, or part of a family; and (in most periods) the border sector in which the arrest occurred. The dataset typically also logs the disposition following the arrest: whether the person was subjected to Title 42 expulsion, expedited removal proceedings, reinstatement of removal proceedings, or standard removal proceedings in immigration court. The dataset includes a variety of other information, recorded with varying degrees of consistency. The most recent two years of data also include several other useful fields, including the date of each person’s earliest arrest (often but not always the same as the current arrest date) and the person’s city of origin. The Deportation Data Project [data](https://deportationdata.org/data.html) page contains more details.
+
+Border Patrol arrest data tells one part of the story of border enforcement; the other part is told by records from the Office of Field Operations (OFO), which staffs ports of entry. When someone appears at a port of entry without a valid visa, typically to seek asylum, the OFO logs the results. This dataset, posted along with the Border Patrol data on the Deportation Data Project [data](https://deportationdata.org/data.html) page, looks similar to the Border Patrol arrest dataset, with the same demographic and disposition information, along with a record of when each person was booked out of CBP custody.
+
+Examples of existing uses:
+
+- The Cato Institute and the Migration Policy Institute, among others, have [repeatedly](https://www.cato.org/blog/biden-didnt-cause-border-crisis-part-1-summary) [used](https://www.cato.org/blog/trump-will-cut-legal-entries-more-illegal-entries) [CBP](https://www.migrationpolicy.org/news/border-numbers-fy2023) [data](https://www.migrationpolicy.org/sites/default/files/publications/mpi-contemporary-border-policy-2024_final.pdf) in analyses of border arrests and port entry arrivals over time.
+- Michael Clemens has [used](https://www.sciencedirect.com/science/article/abs/pii/S0094119021000371) CBP data tracking city of origin to examine the effect of violence on decisions to migrate.
+
+Possible future uses:
+
+- Could evaluate changes in patterns of both apprehensions and the dispositions resulting from those apprehensions, under the new administration.
+- Could evaluate the effects of changes in state policies that might affect border arrivals.
+- Could evaluate the effects of military presence on the southern border.
+
+### Immigration and Customs Enforcement Data
+
+If CBP does not immediately expel or return a person it has arrested, it typically either releases that person with a Notice to Appear in immigration court or transfers the person to ICE custody, at which point ICE decides whether to continue detaining or release the person. ICE also conducts its own arrests, mostly in the interior of the United States, and most commonly within jails and prisons. Finally, when people lose their cases, ICE conducts deportations, whether those people were arrested at the border or in the interior.
+
+Unfortunately, there is currently no way in public data to determine which CBP arrests correspond to which ICE enforcement actions. But thanks to a recent [Second Circuit case](https://casetext.com/case/am-civil-liberties-union-immigrants-rights-project-v-united-states) (on which I worked as an attorney and a consultant), it is now black-letter law that agencies must replace private identifiers with anonymized unique IDs if those private identifiers are needed to link different parts of an agency’s database.^[_See_ ACLU v. ICE, _supra_ note 1, at 663-64.]
+
+As a result, within the ICE data, individuals now have an anonymous unique identifier. The internally linked ICE data is available for fiscal years 2012 to 2023 and contains four tables (i.e. spreadsheets in which each row corresponds to a given event). First, an arrest table logs the date of each arrest and the arrest method—whether it occurred in a local jail, for example, or through a 287(g) agreement (an agreement that deputizes state or local law enforcement officers to perform certain functions of federal immigration agents). Second, a risk classification assessment table logs ICE’s assessment of each individual’s flight risk and danger to the community. Third, a detention table logs every book-in to detention and corresponding book-out from detention, allowing tracking of detention and transfers nationwide. Finally, a deportations table tracks every deportation that ICE conducts. All four of these tables contain a column with a unique ID corresponding (anonymously) to each person’s alien file number, also known as A-number. By matching these unique IDs across tables, it is possible to track a person’s enforcement path from arrest to detention to deportation within the ICE data. In addition, the unique IDs allow rows within a single table to be grouped by person; a single person may appear in multiple rows if, for example, that person was transferred between detention centers.
+
+Together, the ICE data allows detailed tracking of the number and types of deportations, along with information about the detention that preceded those deportations.
+
+The linked ICE dataset has key shortcomings, however. First, it is out of date. It is missing records not only from the last month but also from the last year-plus of the Biden administration.
+
+Second, the linked ICE dataset does not include several categories of information that ICE has routinely released without unique IDs. These nonlinked data categories include records of the locations of ICE arrests, records of detainer requests (requests to jails and prisons to hold noncitizens beyond their release dates), and records of which deportations resulted from such detainers requests. The Deportation Data Project is seeking these additional categories of data with unique IDs. In the meantime, the Project’s website makes available the existing versions of these datasets, which are out of date and lack unique IDs.
+
+Examples of existing uses:
+
+- Academics have used ICE data to [study](https://southerncalifornialawreview.com/wp-content/uploads/2019/11/92_1_1.pdf) [immigration](https://www.david-hausman.com/_files/ugd/a3c925_b5f5dcc8168644d4ab942c5264138230.pdf) [detention](https://scholarship.law.duke.edu/cgi/viewcontent.cgi?article=6692&context=faculty_scholarship), [sanctuary](https://www.pnas.org/doi/10.1073/pnas.2014673117), and [deportation](https://www.law.georgetown.edu/georgetown-law-journal/in-print/volume-110/volume-110-issue-5-august-2022/the-unexamined-law-of-deportation/) [patterns](https://watermark.silverchair.com/rest_a_01266.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAA0gwggNEBgkqhkiG9w0BBwagggM1MIIDMQIBADCCAyoGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMwhgaKRKXT6RvRCbtAgEQgIIC-4Hyd3TUj6GClNhMBlmB65UdlJpXJ60Pk9C6JVtP51mN0zQ557z2NF0pvkYoC6xRqUolxH2mSl8gi9dFe-KDGRZu-6rxjMcnJs8BrBSgtFlE3TlByTZ2t0J2SzPm6tmiRvJlq0MVUWC9dPmsiuRfseuvyCwdTJ5wIuocsxIEoPVUDzi8V2A2BeSGhrzvI9cRmGFNuUwtwCpxpBJLSa1Un8s0a3flGcoxseCby_SYVaMySQrtZe6FeFLzik0ud73N4WuBbJyr-mu_Fg8co8SRXRc05ZcvT0k9PuqyzcohbVpE7uK3Y90i7yNdfzmLAS6R4P099rpSHBBKOt2QNVgycp-HHY8q1LbSqei5fykzLCFY3uEqj4yZjpQ2bNELzDw4dmYr5rKBBi6J4dNogpXiTltgseLwFkuNrFHb_5pVcGDl3IC2LrqDseSnXyNG7xHfLRZIQ-rxyytYygSbK8z7q6Du9NtEIRYJmdic7fkSelnFEY3zcR_wPuWN-G26kq_Y-GpedQvbp-WbrRcwjbwzn7-74JgD2IjKuCL8Y_GClDvLYbNY4e_23sIV19Aa4q-sZ1fQvAd1w4pPSX1NGUtgNM-nJK9WwzovuXz69yw9V8ehw_e-PpBi9qY8YV0MpWJP56LjsNGU9rteTaEkAmaoDgbzLo3pgYCwNX0M-86am5hZNDe6Bo8SVvr1ICBx9IGZi5B1hSQBliwfShldxxq0mgX_j9IgUdr9TKqlUq0abjG3O3exsyyBza7g2vOVAfP_zbTiOWjJxhMS1bYuJ30CjRj4EWz0_KyaZYIbt6uGtHmENXD8Zmp69_Fc2yYiKc0rR9z317mE5DAwsu2lgXxR5D9NsToGvG1aZyo1HkbI3QpaU0vuCOksi7ZlahdhWt80UPj9wf7aWP_8-wt30zSGfFzzXkXg6u8dYFuY2NDHWZCg94LgKVqZ2v7w-DDN_BCWyhgdkxh45mLiLsOQgtDdqEOnyDbvva0fKjDhZwpSPpGrqFp6vn6WEC6utwY).
+- Journalists have used ICE data extensively. For example, Bloomberg News recently used ICE data to [examine](https://www.bloomberg.com/features/2024-asylum-seekers-detention-centers/) the detention of asylum seekers, and the New York Times was an early [user](https://www.nytimes.com/2014/04/07/us/more-deportations-follow-minor-crimes-data-shows.html) of ICE deportation data, reporting on Obama-era deportations.
+- The Vera Institute has used ICE data to create a detention [dashboard](https://www.vera.org/ice-detention-trends) that tracks detention use across detention centers and over time.
+
+Possible future uses:
+
+- Could be used to map swiftly changing patterns in locations and types of arrests and deportations.
+- Could be used to track the creation and expansion of immigration detention centers.
+- Could be used to study the relationship between arrests, detentions and deportations.
+
+### Immigration Court Data
+
+When arrested noncitizens are not swiftly deported (whether in a Title 42 expulsion, an expedited removal, or a reinstatement of removal), they typically fight their case in the immigration courts. These administrative courts are run by EOIR, a division of the Department of Justice. EOIR releases by far the most comprehensive and frequently updated immigration enforcement dataset. The CASE dataset, posted on the [EOIR FOIA library page](https://www.justice.gov/eoir/foia-library-0), contains a wealth of information on every immigration court case since the 1990s, including the immigration charges against each person (i.e. the reason why the government is seeking deportation), any applications for relief from removal (such as asylum or family-based relief), the date and time of every hearing scheduled in the case, indication of legal representation, the outcome of the case, and, when applicable, an appeal.
+
+The immigration court dataset is the best known of these datasets, and it forms the basis for popular visualization tools created by the Transactional Records Access Clearinghouse, which also first obtained the dataset via FOIA. The Deportation Data Project links to the EOIR FOIA library and also allows a direct download of the dataset for convenience.
+
+Unfortunately, the EOIR dataset, like the ICE and CBP datasets, is currently not linked with any other agencies’ data. The Deportation Data Project is pursuing FOIA requests for such links.
+
+Examples of existing uses:
+
+- The [Transactional Records Access Clearinghouse](https://tracreports.org/) has created an extensive set of visual tools that allowed access to the immigration court data.
+- The EOIR dataset has given rise to at least dozens and perhaps hundreds of academic articles and books on the immigration court system. This Google Scholar search offers an incomplete [list](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=Eoir+dataset+foia&btnG=).
+- Journalists have frequently used the EOIR dataset to track policy. In recent examples, ProPublica used EOIR data to study the [destinations](https://projects.propublica.org/new-effects-of-immigration/) of asylum seekers, and Bloomberg News used EOIR data to [cover](https://www.bloomberg.com/news/features/2024-09-03/us-immigration-court-system-falls-to-politics-failing-asylum-seekers) asylum adjudication.
+
+Possible future uses:
+
+- Could be used to track changes intended to increase the speed of immigration court cases.
+- Could be used to track changing patterns in where asylum seekers settle (via the addresses they provide in immigration court).
+- Could be used to study the decisions of newly appointed immigration judges and the effects of new policies on those decisions.
+
+<p><center>\* \* \*</center></p>
+
+Government enforcement datasets already facilitate research, journalism, and policy advocacy. The Deportation Data Project aims to make these activities easier by collecting and documenting the datasets. Over time, the project also aims to obtain additional data that are frequently updated and linked datasets across agencies.
+
+_If you have relevant data, please share it with us, and we will credit you and/or link to you._
+
+## Acknowledgments {.appendix}
+
+Many thanks to Graeme Blair, Lorena Ortega-Guerrero, Amber Qureshi, and Emily Zhang for helpful comments and suggestions. Special thanks to Angela Chung and Sean You of the _California Law Review_ for terrific edits. Disclosure: I was an attorney at the American Civil Liberties Union Immigrants’ Rights’ Project from 2016 to 2019 and continue to consult and volunteer occasionally for the project. That work is unrelated to this research.
+
+

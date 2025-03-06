@@ -13,13 +13,14 @@ website:
 
   navbar:
     left:
-      # - href: guide.qmd
-      #   text: Guide to data
+      - text: Guide
+        href: guide.qmd
       - text: "Data"
         href: data.qmd
       - href: news.qmd
       - href: team.qmd
       - href: related.qmd
+        text: "Related"
   page-footer:
     center: "Licensed [CC-0](https://creativecommons.org/publicdomain/zero/1.0/) (no rights reserved) unless otherwise noted."
     # right:

@@ -232,7 +232,7 @@ df_list |>
 
 ### Flights
 
-Data on ICE-operated charter flights and passenger manifests from the Immigration and Customs Enforcement's Alien Repatriation and Transfer System (ARTS).
+Data on ICE-operated charter flights and passenger manifests from the Immigration and Customs Enforcement's ARTS system.
 
 <details>
 <summary>Show datasets</summary>
