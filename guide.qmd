@@ -5,7 +5,7 @@ template-partials:
   - partials/title-metadata.html
 reference-location: margin
 author:
-  - name: David Hausman 
+  - name: David K. Hausman 
     email: dkhausman@berkeley.edu
     affiliation: 
       - name: Assistant Professor, UC Berkeley School of Law
