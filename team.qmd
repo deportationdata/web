@@ -29,6 +29,12 @@ Elora is the Jerome L. Greene Clinical Professor of Law and Director of the Immi
 
 <div style="clear: both;"></div>
 
+<div class="team-name">**Michael Levin-Gesundheit, *Pro Bono* Counsel.**  [Website](https://www.lieffcabraser.com/attorneys/michael-levin-gesundheit/)<img src="img/levin-gesundheit.jpg" width=250 align="right" class="team-headshot"></div>   
+
+Michael is a partner at the San Francisco-based plaintiffs' law firm Lieff Cabraser Heimann & Bernstein, LLP. 
+
+<div style="clear: both;"></div>
+
 <div class="team-name"><img src="img/gonzalez.jpg" width=250 align="right" class="team-headshot">**Elena Gonzalez** [LinkedIn](https://www.linkedin.com/in/elena-g-2026b3147/)</div>
 
 Elena is a Team Lead in the Faculty Support Unit at Berkeley Law. She earned her BA in International Relations and Spanish from the University of San Diego. There, she engaged with local community groups and organizations to support direct service efforts for migrant communities. Most recently, she worked in the Housing Practice at the East Bay Community Law Center as an intake/program coordinator.
