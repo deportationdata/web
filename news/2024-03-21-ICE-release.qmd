@@ -12,13 +12,13 @@ The new dataset ends after the previous dataset with unique IDs ends; that datas
 
 We will seek a single release covering the full period, an update to make that release more current, and a usable deportations table. We welcome thoughts about the datasets and their shortcomings.
 
-## New Data Details Increase in ICE Arrests Since Inauguration
+### New Data Details Increase in ICE Arrests Since Inauguration
 
 The new dataset allows analysis of trends over time in arrests. Arrests rose sharply in the four weeks after the 2025 presidential inauguration.
 
 ![ICE Arrests](/news/img/2025-03-21-ice-arrests.svg)
 
-## Arrests of People Without Criminal Convictions Rose Most
+### Arrests of People Without Criminal Convictions Rose Most
 
 The new dataset allows analysis of trends over time in whether the arrested individual had a criminal conviction. Consistent with news reports, the new administration increased its arrest numbers partly by targeting people with no criminal history.
 
