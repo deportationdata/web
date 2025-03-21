@@ -69,7 +69,83 @@ options(reactable.theme = reactableTheme(
 
 This page collects and reposts individual-level Immigration and Customs Enforcement (ICE), Customs and Border Patrol (CBP), and Justice Department Executive Office of Immigration Review (EOIR) datasets. In most cases, these datasets are also available for download elsewhere. The original source is always a government agency (ICE, CBP or EOIR), but where other third parties have posted the data before we have, we link to their sites as the source.
 
-## Immigration and Customs Enforcement<br>(with Unique Identifiers)
+## Immigration and Customs Enforcement<br>(March 2025 release with Unique Identifiers)
+
+ICE collects data on every person it encounters, arrests, detains, and deports. This section includes the datasets for which ICE has provided unique identifiers that correspond to individuals, allowing them to be followed anonymously through the stages of the enforcement process.
+
+### Arrests
+
+This dataset shows only the date and method of every arrest (apprehension). Although the dataset is sparse, it may provide useful information when linked with detention and deportation data.
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "arrests_20mar2024") |> 
+  arrange(Start) |>
+  transmute(Start, End, Records, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+### Detainers
+
+Detainers are requests that ICE makes to prisons and jails to hold individuals for transfer to immigration custody and/or to notify ICE of their release dates. This dataset tracks each detainer request and its outcome. For some years there are two versions of the data, one that has many fields and on that has few fields but includes the city and state of the detention facility which is missing from the expanded data. <!--Some of these data were obtained by [NPR](https://github.com/nprapps/sanctuary-cities) through a FOIA request ([read the story](https://www.npr.org/sections/thetwo-way/2016/12/22/504031635/you-say-you-re-an-american-but-what-if-you-had-to-prove-it-or-be-deported)). -->
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "detainers_20mar2024") |> 
+  arrange(Description, Start) |>
+  transmute(Description, Start, End, Records, Source, Download) |> 
+  reactable::reactable(columns = col_defs_description, pagination = FALSE)
+```
+
+</details>
+
+### Detentions
+
+This dataset includes a row for every detention book-in/book-out. Notice that a single stay in detention—defined by a stay book-in and stay book-out date—may include multiple rows because ICE frequently transfers people between detention centers. 
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "detentions_20mar2024") |> 
+  arrange(Start) |>
+  transmute(Start, End, Records, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+### Encounters
+
+This dataset records each encounter that an ICE officer had with someone, whether or not that encounter resulted in an arrest.
+
+<details>
+<summary>Show datasets</summary>
+
+```{r}
+df_list |> 
+  # filter to just get the detainers by type
+  filter(Type == "encounters_20mar2024") |> 
+  arrange(Start) |>
+  transmute(Start, End, Records, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
+```
+
+</details>
+
+## Immigration and Customs Enforcement<br>(pre-2025 with Unique Identifiers)
 
 ICE collects data on every person it encounters, arrests, detains, and deports. This section includes the datasets for which ICE has provided unique identifiers that correspond to individuals, allowing them to be followed anonymously through the stages of the enforcement process.
 
@@ -146,7 +222,7 @@ df_list |>
 
 </details>
 
-## Immigration and Customs Enforcement<br>(without Unique Identifiers)
+## Immigration and Customs Enforcement<br>(pre-2025 without Unique Identifiers)
 
 This section includes other, unlinked ICE datasets. Many of these overlap with the linked data available for download above.
 
