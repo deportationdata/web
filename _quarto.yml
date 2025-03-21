@@ -10,6 +10,12 @@ website:
     tracking-id: "G-FL9SCY5B31"
     anonymize-ip: true
     storage: none
+  announcement:
+    icon: exclamation-circle
+    dismissable: true
+    content: "**Data release**: First detailed data on ICE enforcement since inauguration posted by Deportation Data Project. [Read more](https://deportationdata.org/news/2024-03-21-ICE-release.html)."
+    type: primary
+    position: below-navbar
 
   navbar:
     left:
