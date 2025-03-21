@@ -16,13 +16,13 @@ We will seek a single release covering the full period, an update to make that r
 
 The new dataset allows analysis of trends over time in arrests. Arrests rose sharply in the four weeks after the 2025 presidential inauguration.
 
-![ICE Arrests](/news/img/2025-03-21-ice-arrests.svg)
+![](/news/img/2025-03-21-ice-arrests.svg)
 
 ### Arrests of People Without Criminal Convictions Rose Most
 
 The new dataset allows analysis of trends over time in whether the arrested individual had a criminal conviction. Consistent with news reports, the new administration increased its arrest numbers partly by targeting people with no criminal history.
 
-![ICE Arrests by Criminal Conviction Status](/news/img/2025-03-21-ice-arrests-by-criminal-convictions.svg)
+![](/news/img/2025-03-21-ice-arrests-by-criminal-convictions.svg)
 
 ---
 
