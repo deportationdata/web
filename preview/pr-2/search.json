@@ -67,7 +67,7 @@
     "href": "news.html",
     "title": "News",
     "section": "",
-    "text": "Date\n\n\nTitle\n\n\n\n\n\n\nMar 21, 2025\n\n\nICE data release\n\n\n\n\nMar 6, 2025\n\n\nFirst data release: historical data\n\n\n\n\n\nNo matching items\n\n\n\n\n\n\n\n\nSubscribe\n\n\n\nSubscribe to receive these data updates by email through Google Groups or by email."
+    "text": "Date\n\n\nTitle\n\n\n\n\n\n\nMar 21, 2025\n\n\nICE data release: mid-November 2023 through mid-February 2025\n\n\n\n\nMar 6, 2025\n\n\nFirst data release: historical data\n\n\n\n\n\nNo matching items\n\n\n\n\n\n\n\n\nSubscribe\n\n\n\nSubscribe to receive these data updates by email through Google Groups or by email."
   },
   {
     "objectID": "index.html",
@@ -170,9 +170,9 @@
   {
     "objectID": "news/2024-03-21-ICE-release.html",
     "href": "news/2024-03-21-ICE-release.html",
-    "title": "ICE data release",
+    "title": "ICE data release: mid-November 2023 through mid-February 2025",
     "section": "",
-    "text": "The Deportation Data Project has now received and posted its first set of updated data from Immigration and Customs Enforcement. The new dataset covers the period from mid-November 2023 to mid-February 2025, and includes tables tracking encounters, detainers, arrests, and detentions. (ICE produced a table tracking deportations, but that dataset is unusable; we are seeking a new version.)\nThe new dataset ends after the previous dataset with unique IDs ends; that dataset covers the period from 2012 to mid-2023. Unfortunately, although the two datasets jointly cover almost the full period from 2012 to 2025, the unique IDs only match within time periods. That is, users can only connect the tables in the earlier dataset and the later dataset separately; IDs do not match across releases. In addition, the detention dataset includes only book-outs that occurred after November 15, 2023; this means that some information concerning individuals detained at the beginnning of the data may be missing.\nWe will seek a single release covering the full period, an update to make that release more current, and a usable deportations table. As always, we welcome thoughts about the datasets and their shortcomings.\nAs a quick demonstration of what is possible using these datasets, we show a simple analysis of arrest trends over time below, including our R code for reproducibility.\n\n\n\nICE Arrests\n\n\n\n\n\nICE Arrests by Criminal Conviction Status"
+    "text": "The Deportation Data Project has now received and posted its first set of updated data from Immigration and Customs Enforcement. The new dataset covers the period from mid-November 2023 to mid-February 2025, and includes tables tracking encounters, detainers, arrests, and detentions. (ICE produced a table tracking deportations, but that dataset is unusable; we are seeking a new version.)\nThe new dataset ends after the previous dataset with unique IDs ends; that dataset covers the period from 2012 to mid-2023. Unfortunately, although the two datasets jointly cover almost the full period from 2012 to 2025, the unique IDs only match within time periods. That is, users can only connect the tables in the earlier dataset and the later dataset separately; IDs do not match across releases. In addition, the detention dataset includes only book-outs that occurred after November 15, 2023; this means that some information concerning individuals detained at the beginnning of the data may be missing.\nWe will seek a single release covering the full period, an update to make that release more current, and a usable deportations table. As always, we welcome thoughts about the datasets and their shortcomings.\n##New data shows immediate increase in arrests after inauguration\nAs a quick demonstration of what is possible using these datasets, we show a simple analysis of arrest trends over time below, including our R code for reproducibility.\n\n\n\nICE Arrests\n\n\n\n\n\nICE Arrests by Criminal Conviction Status"
   },
   {
     "objectID": "team.html",
