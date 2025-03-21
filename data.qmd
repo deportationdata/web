@@ -478,7 +478,7 @@ col_defs_description <- list(
 
 df_list |> 
   # filter to just get the detainers by type
-  filter(Type == "courts" & !str_detect(tolower(Filename), "tbllookup")) |> 
+  filter(Type == "courts_0303" & !str_detect(tolower(Filename), "tbllookup")) |> 
   arrange(Start) |>
   transmute(Description, `Release date` = End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs_description, pagination = FALSE)
@@ -500,7 +500,7 @@ col_defs_description <- list(
 
 df_list |> 
   # filter to just get the detainers by type
-  filter(Type == "courts" &  str_detect(tolower(Filename), "tbllookup")) |> 
+  filter(Type == "courts_0303" &  str_detect(tolower(Filename), "tbllookup")) |> 
   arrange(Start) |>
   transmute(Description, `Release date` = End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs_description, pagination = FALSE)
