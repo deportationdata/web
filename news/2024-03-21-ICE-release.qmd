@@ -13,3 +13,7 @@ We will seek a single release covering the full period, an update to make that r
 
 As a quick demonstration of what may be possible using these datasets, we show a simple analysis of arrest trends over time below, including our R code for reproducibility. 
 
+![ICE Arrests](/news/img/2025-03-21-ice-arrests.svg)
+
+![ICE Arrests by Criminal Conviction Status](/news/img/2025-03-21-ice-arrests-by-criminal-convictions.svg)
+
