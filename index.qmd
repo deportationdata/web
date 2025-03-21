@@ -14,6 +14,13 @@ We also provide [links to related projects](related.html) that offer analyses, v
 
 We are grateful for the work of others, and especially of the [Transactional Records Access Clearinghouse (TRAC)](https://tracreports.org), in first obtaining access to many of these datasets. Please get in touch if you have done relevant work in this area and we can do more to acknowledge your contributions.
 
+::: {.callout-tip}
+## Subscribe
+
+Subscribe to receive these data updates by email through [Google Groups](https://groups.google.com/a/law.berkeley.edu/g/deportation_data_updates/about) or [by email](mailto:deportation_data_updates+subscribe@lists.berkeley.edu).
+
+:::
+
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-6}
