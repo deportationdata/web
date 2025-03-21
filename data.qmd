@@ -71,11 +71,11 @@ This page collects and reposts individual-level Immigration and Customs Enforcem
 
 ## Immigration and Customs Enforcement<br>(March 2025 release with Unique Identifiers)
 
-ICE collects data on every person it encounters, arrests, detains, and deports. This section includes the datasets for which ICE has provided unique identifiers that correspond to individuals, allowing them to be followed anonymously through the stages of the enforcement process.
+This is our newest dataset, covering ICE actions from mid-November 2023 through mid-February 2025. In this dataset, ICE has provided unique identifiers that correspond to individuals, allowing them to be followed anonymously through the stages of the enforcement process. Unfortunately, these identifiers do not match across releases, meaning that individuals in this dataset cannot be matched to individuals in the dataset released earlier, which covers 2012 through November 2023. This dataset also includes different categories of data. We urge particular caution in using the detention dataset because it only includes book-outs that occurred after November 15, 2023; this means that some information concerning individuals detained at the beginnning of the data may be missing.
 
 ### Arrests
 
-This dataset shows only the date and method of every arrest (apprehension). Although the dataset is sparse, it may provide useful information when linked with detention and deportation data.
+This dataset shows the date and method of every arrest (apprehension), along with some other case information, including basic information about individuals' nationality and whether they had criminal convictions.
 
 <details>
 <summary>Show datasets</summary>
