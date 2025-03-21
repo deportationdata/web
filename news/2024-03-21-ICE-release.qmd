@@ -1,5 +1,5 @@
 ---
-title: "ICE data release in response to FOIA litigation"
+title: "ICE data release"
 # description: "Post description"
 date: "3/21/2025"
 # date-modified: "5/23/2021"
