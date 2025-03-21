@@ -93,7 +93,7 @@ df_list |>
 
 ### Detainers
 
-Detainers are requests that ICE makes to prisons and jails to hold individuals for transfer to immigration custody and/or to notify ICE of their release dates. This dataset tracks each detainer request. -->
+Detainers are requests that ICE makes to prisons and jails to hold individuals for transfer to immigration custody and/or to notify ICE of their release dates. This dataset tracks each detainer request.
 
 <details>
 <summary>Show datasets</summary>
