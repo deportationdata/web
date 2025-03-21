@@ -30,8 +30,8 @@ df_list <-
   left_join(sources, by = "Location") |> 
   mutate(
     url = glue::glue("{data_url}/{Location}/{Filename}"),
-    Start = as.Date(Start),
-    End = as.Date(End),
+    Start = if_else(is.na(as.numeric(Start)), Start, as.character(janitor::excel_numeric_to_date(as.numeric(Start)))),
+    End = if_else(is.na(as.numeric(End)), End, as.character(janitor::excel_numeric_to_date(as.numeric(End)))),
     Records = `N records`,
     Records = format_numbers(Records),
     Source = glue::glue("<a href='{source_URL}'>{source_label}</a>"),
@@ -102,9 +102,9 @@ Detainers are requests that ICE makes to prisons and jails to hold individuals f
 df_list |> 
   # filter to just get the detainers by type
   filter(Type == "detainers_20mar2024") |> 
-  arrange(Description, Start) |>
-  transmute(Description, Start, End, Records, Source, Download) |> 
-  reactable::reactable(columns = col_defs_description, pagination = FALSE)
+  arrange(Start) |>
+  transmute(Start, End, Records, Source, Download) |> 
+  reactable::reactable(columns = col_defs, pagination = FALSE)
 ```
 
 </details>
@@ -478,7 +478,7 @@ col_defs_description <- list(
 
 df_list |> 
   # filter to just get the detainers by type
-  filter(Type == "courts_0303" & !str_detect(tolower(Filename), "tbllookup")) |> 
+  filter(Type == "courts" & !str_detect(tolower(Filename), "tbllookup")) |> 
   arrange(Start) |>
   transmute(Description, `Release date` = End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs_description, pagination = FALSE)
@@ -500,7 +500,7 @@ col_defs_description <- list(
 
 df_list |> 
   # filter to just get the detainers by type
-  filter(Type == "courts_0303" &  str_detect(tolower(Filename), "tbllookup")) |> 
+  filter(Type == "courts" &  str_detect(tolower(Filename), "tbllookup")) |> 
   arrange(Start) |>
   transmute(Description, `Release date` = End, Records, Source, Download) |> 
   reactable::reactable(columns = col_defs_description, pagination = FALSE)
