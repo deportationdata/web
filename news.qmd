@@ -16,7 +16,7 @@ listing:
 ::: {#news-listings}
 :::
 
-::: {.callout-tip}
+::: {.callout-note}
 ## Subscribe
 
 Subscribe to receive these data updates by email through [Google Groups](https://groups.google.com/a/law.berkeley.edu/g/deportation_data_updates/about) or [by email](mailto:deportation_data_updates+subscribe@lists.berkeley.edu).
