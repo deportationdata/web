@@ -33,10 +33,13 @@ This page includes links to related projects that use immigration enforcement da
 
 <div style="clear: both;"></div>
 
-## Data acquisition
+## Data collection
 
 [American Immigration Council Transparency Initiative](https://www.americanimmigrationcouncil.org/what-we-do/government-transparency)
 : Uses the Freedom of Information Act to secure data and documentation from government agencies and take them to court when they fail to comply. 
+
+[Witness at the Border](https://witnessattheborder.org)
+: Identifies deportation flights by ICE contractors ("ICE Air") identified from ICE contracts released under the FOIA using publicly-available flight data.
 
 <div style="clear: both;"></div>
 
