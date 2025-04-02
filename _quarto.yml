@@ -23,6 +23,8 @@ website:
         href: guide.qmd
       - text: "Data"
         href: data.qmd
+      - text: "Reports"
+        href: reports.qmd
       - href: news.qmd
       - href: team.qmd
       - href: related.qmd

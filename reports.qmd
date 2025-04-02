@@ -1,0 +1,80 @@
+---
+title: "Report repository"
+---
+
+```{r}
+library(tidyverse)
+library(reactable)
+library(readxl)
+library(scales)
+
+format_date <- function(date) {
+  format(date, "%b. %Y")
+}
+
+data_url <- "https://d3jwxh43tyoznc.cloudfront.net"
+
+df_list <- read_excel("labels.xlsx", sheet = "data") 
+sources <- read_excel("labels.xlsx", sheet = "sources") 
+
+format_numbers <- function(x) {
+  ifelse(abs(x) >= 1e6,
+         label_number(scale = 1e-6, suffix = "M", accuracy = 1)(x),
+         ifelse(abs(x) >= 1e3,
+                label_number(scale = 1e-3, suffix = "K", accuracy = 1)(x),
+                label_number(accuracy = 1)(x)))
+}
+
+df_list <-
+  df_list |> 
+  left_join(sources, by = "Location") |> 
+  mutate(
+    url = glue::glue("{data_url}/{Location}/{Filename}"),
+    Start = if_else(is.na(as.numeric(Start)), Start, as.character(janitor::excel_numeric_to_date(as.numeric(Start)))),
+    End = if_else(is.na(as.numeric(End)), End, as.character(janitor::excel_numeric_to_date(as.numeric(End)))),
+    Records = `N records`,
+    Records = format_numbers(Records),
+    Source = glue::glue("<a href='{source_URL}'>{source_label}</a>"),
+    # Download_xlsx = if_else(Download_xlsx != "", glue::glue("<a href='{data_url}/{Download_xlsx}'><img src='img/excel.svg' width = 25 height = 25 alt = 'Excel'></a>"), ""),
+    # Download_sav = if_else(Download_sav != "", glue::glue("<a href='{data_url}/{Download_sav}'><img src='img/spss.svg' width = 25 height = 25 alt = 'Excel'></a>"), ""),
+    # Download_dta = if_else(Download_dta != "", glue::glue("<a href='{data_url}/{Download_dta}'><img src='img/stata.svg' width = 25 height = 25 alt = 'Excel'></a>"), ""),
+    # Download_csv = if_else(Download_csv != "", glue::glue("<a href='{data_url}/{Download_csv}'><img src='img/csv.svg' width = 25 height = 25 alt = 'CSV'></a>"), ""),
+    # Download_rds = if_else(Download_rds != "", glue::glue("<a href='{data_url}/{Download_rds}'><img src='img/r.svg' width = 25 height = 25 alt = 'R'></a>"), ""),
+    # 
+    # Download = glue::glue("{Download_xlsx} {Download_dta} {Download_rds} {Download_csv} {Download_sav}", .na = "")
+    Download = glue::glue("<a href='{url}'>{tools::file_ext(Filename)}</a> ({Filesize})"),
+  ) 
+
+col_defs <- list(
+  Start = colDef(minWidth = 75), 
+  End = colDef(minWidth = 75), 
+  Records = colDef(minWidth = 55, align = "right"),
+  Source = colDef(minWidth = 65, html = TRUE),
+  Download = colDef(minWidth = 100, html = TRUE)
+)
+
+col_defs_description <- list(
+  Description = colDef(minWidth = 125),
+  Start = colDef(minWidth = 75), 
+  End = colDef(minWidth = 75), 
+  Records = colDef(minWidth = 55, align = "right"),
+  Source = colDef(minWidth = 65, html = TRUE),
+  Download = colDef(minWidth = 100, html = TRUE)
+)
+
+options(reactable.theme = reactableTheme(
+  backgroundColor = "#F4F6F7"
+))
+```
+
+This page collects and reposts reports that include data from the Office of Homeland Security Statistics (OHSS), Immigration and Customs Enforcement (ICE), Customs and Border Patrol (CBP), and Justice Department Executive Office of Immigration Review (EOIR) datasets. In most cases, these reports are also available for download elsewhere. The original source is always a government agency (OHSS, ICE, CBP, or EOIR), but where other third parties have posted the data before we have, we link to their sites as the source.
+
+## Office of Homeland Security Statistics
+
+## Immigration and Customs Enforcement
+
+## Customs and Border Patrol
+
+## Executive Office for Immigration Review<br>(Immigration Courts)
+
+
